@@ -52,7 +52,9 @@ const { codec } = Astro.props;
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
+          { // @ts-ignore
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          }
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
