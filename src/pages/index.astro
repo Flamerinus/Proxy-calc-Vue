@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import '@/styles/globals.css';
+import { Button } from '@/components/ui/button';
+import { buttonVariants } from "@/components/ui/button";
+import { getCollection } from "astro:content";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+
+const codecs = await getCollection("codecs");
+//console.log(codecs);
+
+---
+
+
+<Layout title={"Proxy Calc"}>
+	<main>
+		
+			
+		{codecs.map(codec => (
+			
+			<a href= {`/codeclist/${codec.slug}`}><Button>{codec.data.title}</Button></a>
+
+		))}
+
+
+		
+	</main>
+</Layout>
+

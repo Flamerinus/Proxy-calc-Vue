@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+import Selector from "@/components/Selector.vue";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export const getStaticPaths = async () => {
+  const codecs = await getCollection("codecs");
+  const paths = codecs.map((codec) => {
+    return {
+      params: {
+        slug: codec.slug,
+      },
+      props: {
+        codec,
+      },
+    };
+  });
+  return paths;
+};
+
+type Props = {
+  codec: CollectionEntry<"codecs">;
+};
+
+const { codec } = Astro.props;
+
+
+//console.dir(codec, { depth: null });
+---
+
+<Layout title={codec.data.title}>
+  <main class="container">
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>{codec.data.title}</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+    <h1>{codec.data.title}</h1>
+
+    <div class="w-full inline-flex justify-items-center">
+      <Card
+        class="mx-auto w-full md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 min-w-72"
+      >
+        <CardHeader class="text-center">
+          <CardTitle>{codec.data.name}</CardTitle>
+          <CardDescription>Bitrate: {codec.data.bitrate}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Selector resolvalues={codec} client:load />
+        </CardContent>
+        <CardFooter>
+          <p>Megabytes per second. No audio.</p>
+        </CardFooter>
+      </Card>
+    </div>
+  </main>
+</Layout>

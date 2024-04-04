@@ -1,0 +1,178 @@
+<script setup lang="ts">
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { computed, ref, watch } from 'vue'
+
+import Button from './ui/button/Button.vue';
+
+const props = defineProps<{
+  resolvalues: any;
+}>();
+
+const resolutionsWithResValue: { resolution: string; resvalue: string }[] = [];
+
+for (const resolutionName in props.resolvalues.data.Resolutions) {
+  const resolution = props.resolvalues.data.Resolutions[resolutionName];
+  resolutionsWithResValue.push({
+    resolution: resolutionName,
+    resvalue: resolution.Res
+  });
+}
+const durations: { [key: string]: number } = {
+  '1 minute': 60,
+  '10 minutes': 600,
+  '30 minutes': 1800,
+  '1 hour': 3600,
+  '3 hours': 10800,
+  '10 hours': 36000,
+};
+
+const selectedResolution = ref("")
+const selectedCodec = ref()
+const codecOptions = ref()
+const selectedFps = ref("")
+const fpsOptions = ref()
+const selectedDuration = ref("")
+const bitRate = ref()
+const fileSize = ref()
+
+watch(selectedResolution, () => {
+  const codecs = props.resolvalues.data.Resolutions[selectedResolution.value].Codec;
+  codecOptions.value = Object.keys(codecs);
+
+  if (!codecOptions.value.includes(selectedCodec.value)) {
+    selectedCodec.value = "";
+    selectedFps.value = "";
+  }
+
+  if (selectedCodec.value) {
+    const fps = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value];
+    fpsOptions.value = Object.keys(fps);
+    if (!fpsOptions.value.includes(selectedFps.value)) {
+      selectedFps.value = "";
+    }
+  }
+  calculate();
+});
+
+watch(selectedCodec, () => {
+  if (selectedCodec.value) {
+    const fps = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value];
+    fpsOptions.value = Object.keys(fps);
+    if (!fpsOptions.value.includes(selectedFps.value)) {
+      selectedFps.value = "";
+    }
+  }
+  calculate();
+});
+
+function calculate() {
+  if (selectedFps.value) {
+    const finalpath = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value][selectedFps.value]
+
+    bitRate.value = finalpath
+
+    if (selectedDuration) {
+      const selectedDurationValue = selectedDuration.value; // Access the value
+      fileSize.value = bitRate.value * durations[selectedDurationValue]
+    }
+
+  }
+}
+
+watch([selectedFps, selectedDuration], () => {
+  calculate();
+});
+
+const formattedFileSize = computed(() => {
+  if (fileSize.value > 999 && fileSize.value < 999999) {
+    const sizeInGB = (fileSize.value / 1024).toFixed(2);
+    return sizeInGB + " GB";
+  } else if (fileSize.value > 999999) {
+    const sizeInTB = (fileSize.value / (1024*1024)).toFixed(2);
+    return sizeInTB + " TB";
+  } else {
+    return fileSize.value.toFixed(2) + " MB";
+  }
+  
+});
+
+</script>
+
+<template>
+  <div class="mx-auto my-2">
+    <Select name="resolution-selector" v-model="selectedResolution">
+      <SelectTrigger>
+        <SelectValue placeholder="Please select resolution" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem v-for="resolution in resolutionsWithResValue" :value="resolution.resolution">
+            {{ resolution.resolution }} {{ resolution.resvalue }}
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  </div>
+
+  <div class="mx-auto my-2">
+    <Select v-if="selectedResolution" name="codec-selector" v-model="selectedCodec">
+      <SelectTrigger>
+        <SelectValue placeholder="Please select codec" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+
+          <SelectItem v-for="codecName in codecOptions" :key="codecName" :value="codecName">
+            {{ codecName }}
+          </SelectItem>
+
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  </div>
+
+  <div class="mx-auto my-2">
+    <Select v-if="selectedCodec" name="fps-selector" v-model="selectedFps">
+      <SelectTrigger>
+        <SelectValue placeholder="Please select frame rate" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem v-for="fps in fpsOptions" :key="fps" :value="fps">
+            {{ fps }}
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  </div>
+
+  <div v-if="selectedFps" class="my-2 flex">
+    <Button class=" flex-1" variant="secondary">Bitrate: {{ bitRate }} MB/s</Button>
+  </div>
+
+  <div class="mx-auto my-2">
+    <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
+      <SelectTrigger>
+        <SelectValue placeholder="Please select clip duration" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem v-for="(value, label) in durations" :value="String(label)">
+            {{ label }}
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  </div>
+
+  <div class="my-2 flex gap-2">
+    <Button v-if="selectedDuration && selectedFps" class=" flex-1" variant="secondary">File size: {{ formattedFileSize }}</Button>
+  </div>
+</template>
