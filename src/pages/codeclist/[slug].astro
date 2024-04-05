@@ -10,6 +10,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -43,7 +49,6 @@ type Props = {
 
 const { codec } = Astro.props;
 
-
 //console.dir(codec, { depth: null });
 ---
 
@@ -52,8 +57,11 @@ const { codec } = Astro.props;
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          { // @ts-ignore
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          {
+            (
+              // @ts-ignore
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            )
           }
         </BreadcrumbItem>
         <BreadcrumbSeparator />
@@ -62,7 +70,7 @@ const { codec } = Astro.props;
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-    
+
     <div class="w-full inline-flex justify-items-center">
       <Card
         class="my-4 mx-auto w-full md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 min-w-72"

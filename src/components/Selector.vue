@@ -7,6 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+
 import { computed, ref, watch } from 'vue'
 
 import Button from './ui/button/Button.vue';
@@ -81,6 +83,7 @@ function calculate() {
     if (selectedDuration) {
       const selectedDurationValue = selectedDuration.value; // Access the value
       fileSize.value = bitRate.value * durations[selectedDurationValue]
+      
     }
 
   }
@@ -102,6 +105,11 @@ const formattedFileSize = computed(() => {
   }
 
 });
+
+function copytext() {
+const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
+  navigator.clipboard.writeText(infoText);
+}
 
 </script>
 <template>
@@ -174,8 +182,23 @@ const formattedFileSize = computed(() => {
     </Select>
   </div>
 
-  <div class="my-2 flex gap-2">
+  <div class="my-2 flex">
     <Button v-if="selectedDuration && selectedFps" class=" flex-1" variant="secondary">File size: {{ formattedFileSize
       }}</Button>
   </div>
+
+  <div v-if="selectedDuration && selectedFps" class="grid w-full">
+    <Label for="description">Info</Label>
+    <Alert>
+      <AlertDescription >
+        <span id="info">
+        {{ selectedDuration }} of video footage in {{ selectedResolution }} -> {{ resolutionsWithResValue.find(item => item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
+        the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of disk space and
+        have a bit rate of {{ bitRate }} MB/s.
+      </span>
+      </AlertDescription>
+    </Alert>
+<Button @click="copytext" class="my-1" variant="outline">Copy text</Button>
+  </div>
+
 </template>

@@ -1,6 +1,6 @@
 Add header
 Add footer
-Add text area with the selected options for people who want to copy/paste
+# Add text area with the selected options for people who want to copy/paste
 add share buttons and links
 fix dark mode button location etc
 add custom bitrate page
