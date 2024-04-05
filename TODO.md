@@ -7,4 +7,4 @@ add custom bitrate page
 add more codecs if found suitable for proxy
 # fix tab description in browser 
 add tips about concepts and words, popups or whatever
-# add description fro selectors
+# add description for selectors

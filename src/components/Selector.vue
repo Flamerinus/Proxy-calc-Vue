@@ -95,19 +95,19 @@ const formattedFileSize = computed(() => {
     const sizeInGB = (fileSize.value / 1024).toFixed(2);
     return sizeInGB + " GB";
   } else if (fileSize.value > 999999) {
-    const sizeInTB = (fileSize.value / (1024*1024)).toFixed(2);
+    const sizeInTB = (fileSize.value / (1024 * 1024)).toFixed(2);
     return sizeInTB + " TB";
   } else {
     return fileSize.value.toFixed(2) + " MB";
   }
-  
+
 });
 
 </script>
-
 <template>
   <div class="mx-auto my-2">
     <Select name="resolution-selector" v-model="selectedResolution">
+      <Label for="resolution">Resolution</Label>
       <SelectTrigger>
         <SelectValue placeholder="Please select resolution" />
       </SelectTrigger>
@@ -123,6 +123,7 @@ const formattedFileSize = computed(() => {
 
   <div class="mx-auto my-2">
     <Select v-if="selectedResolution" name="codec-selector" v-model="selectedCodec">
+      <Label for="codec">Codec</Label>
       <SelectTrigger>
         <SelectValue placeholder="Please select codec" />
       </SelectTrigger>
@@ -140,6 +141,7 @@ const formattedFileSize = computed(() => {
 
   <div class="mx-auto my-2">
     <Select v-if="selectedCodec" name="fps-selector" v-model="selectedFps">
+      <Label for="framerate">Frame rate</Label>
       <SelectTrigger>
         <SelectValue placeholder="Please select frame rate" />
       </SelectTrigger>
@@ -152,13 +154,13 @@ const formattedFileSize = computed(() => {
       </SelectContent>
     </Select>
   </div>
-
   <div v-if="selectedFps" class="my-2 flex">
     <Button class=" flex-1" variant="secondary">Bitrate: {{ bitRate }} MB/s</Button>
   </div>
 
   <div class="mx-auto my-2">
     <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
+      <Label for="duration">Duration</Label>
       <SelectTrigger>
         <SelectValue placeholder="Please select clip duration" />
       </SelectTrigger>
@@ -173,6 +175,7 @@ const formattedFileSize = computed(() => {
   </div>
 
   <div class="my-2 flex gap-2">
-    <Button v-if="selectedDuration && selectedFps" class=" flex-1" variant="secondary">File size: {{ formattedFileSize }}</Button>
+    <Button v-if="selectedDuration && selectedFps" class=" flex-1" variant="secondary">File size: {{ formattedFileSize
+      }}</Button>
   </div>
 </template>
