@@ -12,6 +12,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { computed, ref, watch } from 'vue'
 
 import Button from './ui/button/Button.vue';
+import { Badge } from '@/components/ui/badge';
 
 const props = defineProps<{
   resolvalues: any;
@@ -42,6 +43,8 @@ const selectedFps = ref("")
 const fpsOptions = ref()
 const selectedDuration = ref("")
 const bitRate = ref()
+const bitDepth = ref("")
+const chroma = ref("")
 const fileSize = ref()
 
 watch(selectedResolution, () => {
@@ -78,12 +81,14 @@ function calculate() {
   if (selectedFps.value) {
     const finalpath = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value][selectedFps.value]
 
-    bitRate.value = finalpath
+    bitRate.value = finalpath.Data
+    bitDepth.value = finalpath.Bits
+    chroma.value = finalpath.Chroma
 
     if (selectedDuration) {
       const selectedDurationValue = selectedDuration.value; // Access the value
       fileSize.value = bitRate.value * durations[selectedDurationValue]
-      
+
     }
 
   }
@@ -107,7 +112,7 @@ const formattedFileSize = computed(() => {
 });
 
 function copytext() {
-const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
+  const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
   navigator.clipboard.writeText(infoText);
 }
 
@@ -162,8 +167,14 @@ const infoText = document.getElementById("info")?.innerText || "Select all the o
       </SelectContent>
     </Select>
   </div>
-  <div v-if="selectedFps" class="my-2 flex">
-    <Button class=" flex-1" variant="secondary">Bitrate: {{ bitRate }} MB/s</Button>
+  
+  <div v-if="selectedFps" class="my-2 flex justify-around gap-2">
+    <Badge class=" flex-none text-center"  variant="secondary">Bitrate: {{ bitRate }} MB/s</Badge>
+    <Badge class=" flex-none text-center" variant="secondary">Color depth: {{ bitDepth }} bits</Badge>
+  </div>
+
+  <div v-if="selectedFps" class="my-2 flex justify-around gap-2">
+    <Badge class=" flex-none" variant="secondary">Chroma subsampling: {{ chroma }} </Badge>
   </div>
 
   <div class="mx-auto my-2">
@@ -182,23 +193,24 @@ const infoText = document.getElementById("info")?.innerText || "Select all the o
     </Select>
   </div>
 
-  <div class="my-2 flex">
-    <Button v-if="selectedDuration && selectedFps" class=" flex-1" variant="secondary">File size: {{ formattedFileSize
-      }}</Button>
+  <div class="my-2 flex justify-around">
+    <Badge v-if="selectedDuration && selectedFps" class="flex-none" variant="secondary">File size: {{ formattedFileSize
+      }}</Badge>
   </div>
 
   <div v-if="selectedDuration && selectedFps" class="grid w-full">
     <Label for="description">Info</Label>
     <Alert>
-      <AlertDescription >
+      <AlertDescription>
         <span id="info">
-        {{ selectedDuration }} of video footage in {{ selectedResolution }} -> {{ resolutionsWithResValue.find(item => item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
-        the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of disk space and
-        have a bit rate of {{ bitRate }} MB/s.
-      </span>
+          {{ selectedDuration }} of video footage in {{ selectedResolution }} -> {{ resolutionsWithResValue.find(item =>
+            item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
+          the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of
+          disk space, will have a bit rate of {{ bitRate }} MB/s, a color depth of {{ bitDepth }} bits and a {{ chroma }} chroma subsampling.
+        </span>
       </AlertDescription>
     </Alert>
-<Button @click="copytext" class="my-1" variant="outline">Copy text</Button>
+    <Button @click="copytext" class="my-1" variant="outline">Copy text</Button>
   </div>
 
 </template>

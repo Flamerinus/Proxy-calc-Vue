@@ -89,3 +89,9 @@ src/components/ui/alert/Alert.vue
 src/components/ui/alert/AlertDescription.vue
 src/components/ui/alert/AlertTitle.vue
 src/components/ui/alert/index.ts
+ASSETS/Apple_ProRes.pdf
+ASSETS/dnxhd.pdf
+ASSETS/DNxHR Codec Bandwidth Specifications.htm
+ASSETS/HighRes_WorkflowsGuide.pdf
+src/components/ui/badge/Badge.vue
+src/components/ui/badge/index.ts
