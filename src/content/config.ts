@@ -5,6 +5,7 @@ const codecsCollection = defineCollection({
         title: z.string(),
         name: z.string(),
         bitrate: z.string(),
+        MB: z.number(),
         Resolutions: z.any(),
     }),
 });

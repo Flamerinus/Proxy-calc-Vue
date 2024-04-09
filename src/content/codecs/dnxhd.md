@@ -1,8 +1,9 @@
 ---
-# All data rates are in MB/s, Mega Bytes per second.
+# If MB is 1, data rates will be treated as they are, meagbytes per seconds, for all calculations. If you set it to 8, it means the data is in megabits per second, and it will be divided by 8 in the selector.
 title: Avid DNxHD® 
 name: DNxHD
 bitrate: constant
+MB: 1
 Resolutions:
   FHD:
     Res: 1920 x 1080
@@ -269,5 +270,4 @@ Resolutions:
           Data: 5.375
           Bits: "8"
           Chroma: "4:2:2"
-
 ---

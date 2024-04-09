@@ -1,140 +1,440 @@
 ---
-# All data rates are in MB/s, Mega Bytes per second.
+# If MB is 1, data rates will be treated as they are, meagbytes per seconds, for all calculations. If you set it to 8, it means the data is in megabits per second, and it will be divided by 8 in the selector.
 title: Avid DNxHR® 
 name: DNxHR
 bitrate: constant
+MB: 1
 Resolutions:
   FHD:
     Res: 1920x1080px
     Codec:
       DNxHR LB:
-        23.976: 4.31
-        25: 4.49
-        29.97: 5.39
-        50: 8.98
-        59.94: 10.77
+        23.976: 
+          Data: 4.31
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 4.49
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 5.39
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 8.98
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 10.77
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR SQ:
-        23.976: 13.77
-        25: 14.36
-        29.97: 17.21
-        50: 28.71
-        59.94: 34.42
+        23.976: 
+          Data: 13.77
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 14.36
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 17.21
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 28.71
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 34.42
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQ:
-        23.976: 20.79
-        25: 21.68
-        29.97: 25.99
-        50: 43.36
-        59.94: 51.98
+        23.976: 
+          Data: 20.79
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 21.68
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 25.99
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 43.36
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 51.98
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQX:
-        23.976: 20.79
-        25: 21.68
-        29.97: 25.99
-        50: 43.36
-        59.94: 51.98
+        23.976: 
+          Data: 20.79
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        25: 
+          Data: 21.68
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 25.99
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        50: 
+          Data: 43.36
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 51.98
+          Bits: "10/12"
+          Chroma: "4:2:2"
       DNxHR 444:
-        23.976: 41.68
-        25: 43.46
-        29.97: 52.10
-        50: 86.91
-        59.94: 104.19
+        23.976: 
+          Data: 41.68
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        25: 
+          Data: 43.46
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        29.97: 
+          Data: 52.10
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        50: 
+          Data: 86.91
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        59.94: 
+          Data: 104.19
+          Bits: "10/12"
+          Chroma: "4:4:4"
   2K:
     Res: 2048x1080px
     Codec:
       DNxHR LB:
-        23.976: 4.59
-        25: 4.79
-        29.97: 5.74
-        50: 9.57
-        59.94: 11.47
+        23.976: 
+          Data: 4.59
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 4.79
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 5.74
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 9.57
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 11.47
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR SQ:
-        23.976: 14.70
-        25: 15.33
-        29.97: 18.38
-        50: 30.66
-        59.94: 36.76
+        23.976: 
+          Data: 14.70
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 15.33
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 18.38
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 30.66
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 36.76
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQ:
-        23.976: 22.20
-        25: 23.14
-        29.97: 27.75
-        50: 46.29
-        59.94: 55.49
+        23.976: 
+          Data: 22.20
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 23.14
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 27.75
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 46.29
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 55.49
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQX:
-        23.976: 22.20
-        25: 23.14
-        29.97: 27.75
-        50: 46.29
-        59.94: 55.49
+        23.976: 
+          Data: 22.20
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        25: 
+          Data: 23.14
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 27.75
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        50: 
+          Data: 46.29
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 55.49
+          Bits: "10/12"
+          Chroma: "4:2:2"
       DNxHR 444:
-        23.976: 44.39
-        25: 46.29
-        29.97: 55.49
-        50: 92.58
-        59.94: 110.98
+        23.976: 
+          Data: 44.39
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        25: 
+          Data: 46.29
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        29.97: 
+          Data: 55.49
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        50: 
+          Data: 92.58
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        59.94: 
+          Data: 110.98
+          Bits: "10/12"
+          Chroma: "4:4:4"
   UHD:
     Res: 3840x2160px
     Codec:
       DNxHR LB:
-        23.976: 17.14
-        25: 17.87
-        29.97: 21.42
-        50: 35.74
-        59.94: 42.85
+        23.976: 
+          Data: 17.14
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 17.87
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 21.42
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 35.74
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 42.85
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR SQ:
-        23.976: 55.07
-        25: 57.42
-        29.97: 68.84
-        50: 114.84
-        59.94: 137.67
+        23.976: 
+          Data: 55.07
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 57.42
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 68.84
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 114.84
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 137.67
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQ:
-        23.976: 83.26
-        25: 86.82
-        29.97: 104.08
-        50: 173.63
-        59.94: 208.15
+        23.976: 
+          Data: 83.26
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 86.82
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 104.08
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 173.63
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 208.15
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQX:
-        23.976: 83.26
-        25: 86.82
-        29.97: 104.08
-        50: 173.63
-        59.94: 208.15
+        23.976: 
+          Data: 83.26
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        25: 
+          Data: 86.82
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 104.08
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        50: 
+          Data: 173.63
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 208.15
+          Bits: "10/12"
+          Chroma: "4:2:2"
       DNxHR 444:
-        23.976: 166.61
-        25: 173.73
-        29.97: 208.27
-        50: 347.46
-        59.94: 416.54
+        23.976: 
+          Data: 166.61
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        25: 
+          Data: 173.73
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        29.97: 
+          Data: 208.27
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        50: 
+          Data: 347.46
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        59.94: 
+          Data: 416.54
+          Bits: "10/12"
+          Chroma: "4:4:4"
   4K:
     Res: 4096x2160px
     Codec:
       DNxHR LB:
-        23.976: 18.26
-        25: 19.04
-        29.97: 22.83
-        50: 38.09
-        59.94: 45.66
+        23.976: 
+          Data: 18.26
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 19.04
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 22.83
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 38.09
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 45.66
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR SQ:
-        23.976: 58.72
-        25: 61.23
-        29.97: 73.40
-        50: 122.46
-        59.94: 146.81
+        23.976: 
+          Data: 58.72
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 61.23
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 73.40
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 122.46
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 146.81
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQ:
-        23.976: 88.88
-        25: 92.68
-        29.97: 111.10
-        50: 185.35
-        59.94: 222.20
+        23.976: 
+          Data: 88.88
+          Bits: 8
+          Chroma: "4:2:2"
+        25: 
+          Data: 92.68
+          Bits: 8
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 111.10
+          Bits: 8
+          Chroma: "4:2:2"
+        50: 
+          Data: 185.35
+          Bits: 8
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 222.20
+          Bits: 8
+          Chroma: "4:2:2"
       DNxHR HQX:
-        23.976: 88.88
-        25: 92.68
-        29.97: 111.10
-        50: 185.35
-        59.94: 222.20
+        23.976: 
+          Data: 88.88
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        25: 
+          Data: 92.68
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        29.97: 
+          Data: 111.10
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        50: 
+          Data: 185.35
+          Bits: "10/12"
+          Chroma: "4:2:2"
+        59.94: 
+          Data: 222.20
+          Bits: "10/12"
+          Chroma: "4:2:2"
       DNxHR 444:
-        23.976: 177.67
-        25: 185.25
-        29.97: 222.08
-        50: 370.51
-        59.94: 444.16
-
+        23.976: 
+          Data: 177.67
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        25: 
+          Data: 185.25
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        29.97: 
+          Data: 222.08
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        50: 
+          Data: 370.51
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        59.94: 
+          Data: 444.16
+          Bits: "10/12"
+          Chroma: "4:4:4"
 ---

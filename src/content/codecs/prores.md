@@ -1,411 +1,1526 @@
 ---
+# If MB is 1, data rates will be treated as they are, meagbytes per seconds, for all calculations. If you set it to 8, it means the data is in megabits per second, and it will be divided by 8 in the selector.
 title: Apple ProRes®
 name: ProRes
-bitrate: constant
+bitrate: variable
+MB: 8
 Resolutions:
   SD:
     Res: 720x486px
     Codec:
       ProRes 422 Proxy:
-        24p: 1.25
-        60i, 30p: 1.5
+        "24p":
+          Data: 10
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 12
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 2.88
-        60i, 30p: 3.63
+        "24p":
+          Data: 23
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 29
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 4.25
-        60i, 30p: 5.25
+        "24p":
+          Data: 34
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 42
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 6.25
-        60i, 30p: 9.38
+        "24p":
+          Data: 50
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 63
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 14.13
-        60i, 30p: 17.63
-  PAL:  
+        "24p":
+          Data: 75
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 94
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 113
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 141
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  PAL:
     Res: 720x576px
     Codec:
       ProRes 422 Proxy:
-        50i, 25p: 1.5
+        "50i, 25p":
+          Data: 12
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        50i, 25p: 3.5
+        "50i, 25p":
+          Data: 28
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        50i, 25p: 5.13
+        "50i, 25p":
+          Data: 41
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        50i, 25p: 7.63
+        "50i, 25p":
+          Data: 61
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        50i, 25p: 11.5
-  720p 4/3:  
+        "50i, 25p":
+          Data: 92
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "50i, 25p":
+          Data: 138
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  Mini:
     Res: 960x720px
     Codec:
       ProRes 422 Proxy:
-        24p: 1.88
-        25p: 2
-        30p: 2.38
-        50p: 4
-        60p: 4.75
+        "24p":
+          Data: 15
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 16
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 19
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 32
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 38
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 4.38
-        25p: 4.5
-        30p: 5.5
-        50p: 9.13
-        60p: 10.88
+        "24p":
+          Data: 35
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 36
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 44
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 73
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 87
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 6.25
-        25p: 6.5
-        30p: 7.88
-        50p: 13.13
-        60p: 15.75
+        "24p":
+          Data: 50
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 52
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 63
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 105
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 126
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 9.38
-        25p: 9.88
-        30p: 11.75
-        50p: 19.63
-        60p: 23.63
+        "24p":
+          Data: 75
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 79
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 94
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 157
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 189
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 14.13
-        25p: 14.75
-        30p: 17.63
-        50p: 29.38
-        60p: 44.25
-  720p HD:  
+        "24p":
+          Data: 113
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 118
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 141
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 236
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 283
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 170
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 76
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 212
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 354
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 424
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  HD:
     Res: 1280x720px
     Codec:
       ProRes 422 Proxy:
-        24p: 2.25
-        25p: 2.38
-        30p: 2.88
-        50p: 4.75
-        60p: 5.63
+        "24p":
+          Data: 18
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 19
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 23
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 38
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 45
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 5.13
-        25p: 5.25
-        30p: 6.38
-        50p: 10.5
-        60p: 12.63
+        "24p":
+          Data: 41
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 42
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 51
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 84
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 101
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 7.38
-        25p: 7.63
-        30p: 9.13
-        50p: 15.25
-        60p: 18.38
+        "24p":
+          Data: 59
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 61
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 73
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 122
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 147
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 11
-        25p: 11.5
-        30p: 13.75
-        50p: 23
-        60p: 27.5
-  1080Mini:  
+        "24p":
+          Data: 88
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 92
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 110
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 184
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 220
+          Bits: 10
+          Chroma: "4:2:2"
+      ProRes 4444 (no alpha):
+        "24p":
+          Data: 132
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 138
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 165
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 275
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 330
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 198
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 206
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 247
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 413
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 495
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  Maxi:
     Res: 1280x1080px
     Codec:
       ProRes 422 Proxy:
-        24p: 3.88
-        60i, 30p: 4.75
+        "24p":
+          Data: 31
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 38
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 8.75
-        60i, 30p: 10.88
+        "24p":
+          Data: 70
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 87
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 12.63
-        60i, 30p: 15.75
+        "24p":
+          Data: 101
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 126
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 18.88
-        60i, 30p: 23.63
+        "24p":
+          Data: 151
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 189
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 28.25
-        60i, 30p: 35.38
-  1080semi:  
+        "24p":
+          Data: 226
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 283
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 339
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 424
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  Extra:
     Res: 1440x1080px
     Codec:
       ProRes 422 Proxy:
-        24p: 3.88
-        50i, 25p: 4
-        60i, 30p: 4.75
+        "24p":
+          Data: 31
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 32
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 38
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 8.75
-        50i, 25p: 9.13
-        60i, 30p: 10.88
+        "24p":
+          Data: 70
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 73
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 87
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 12.63
-        50i, 25p: 13.13
-        60i, 30p: 15.75
+        "24p":
+          Data: 101
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 105
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 126
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 18.88
-        50i, 25p: 19.63
-        60i, 30p: 23.63
+        "24p":
+          Data: 151
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 157
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 189
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 28.25
-        50i, 25p: 29.38
-        60i, 30p: 35.38
+        "24p":
+          Data: 226
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50i, 25p":
+          Data: 236
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 283
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 339
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50i, 25p":
+          Data: 354
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 424
+          Bits: "10/12"
+          Chroma: "4:4:4"
   FHD:
     Res: 1920x1080px
     Codec:
       ProRes 422 Proxy:
-        24p: 4.5
-        25p: 4.63
-        30p: 5.63
-        50p: 9.5
-        60p: 11.38
+        "24p":
+          Data: 36
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 38
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 45
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 76
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 91
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 10.25
-        25p: 10.63
-        30p: 12.75
-        50p: 21.25
-        60p: 25.5
+        "24p":
+          Data: 82
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 85
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 102
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 170
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 204
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 14.63
-        25p: 15.25
-        30p: 18.38
-        50p: 30.63
-        60p: 36.63
+        "24p":
+          Data: 117
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 122
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 147
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 245
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 293
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 22
-        25p: 23
-        30p: 27.5
-        50p: 45.88
-        60p: 55
+        "24p":
+          Data: 176
+          Bits: 10
+          Chroma: "4:2:2"
+        "50i, 25p":
+          Data: 184
+          Bits: 10
+          Chroma: "4:2:2"
+        "60i, 30p":
+          Data: 220
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 367
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 440
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 33
-        25p: 34.38
-        30p: 41.25
-        50p: 68.88
-        60p: 82.5
+        "24p":
+          Data: 264
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50i, 25p":
+          Data: 275
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 330
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 551
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 660
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 49.5
-        25p: 51.63
-        30p: 61.88
-        50p: 103.25
-        60p: 123.75
+        "24p":
+          Data: 396
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50i, 25p":
+          Data: 413
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60i, 30p":
+          Data: 495
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 826
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 990
+          Bits: "10/12"
+          Chroma: "4:4:4"
   2K:
     Res: 2048x1080px
     Codec:
       ProRes 422 Proxy:
-        24p: 5.13
-        25p: 5.38
-        30p: 6.5
-        50p: 10.75
-        60p: 12.88
+        "24p":
+          Data: 41
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 43
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 52
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 86
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 103
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 11.63
-        25p: 12.13
-        30p: 14.5
-        50p: 24.25
-        60p: 29
+        "24p":
+          Data: 93
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 97
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 116
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 194
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 232
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 16.75
-        25p: 17.5
-        30p: 21
-        50p: 35
-        60p: 41.88
+        "24p":
+          Data: 134
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 140
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 168
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 280
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 335
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 25.13
-        25p: 26.25
-        30p: 31.38
-        50p: 52.38
-        60p: 62.88
+        "24p":
+          Data: 201
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 210
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 251
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 419
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 503
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 37.75
-        25p: 39.38
-        30p: 47.38
-        50p: 78.63
-        60p: 94.5
+        "24p":
+          Data: 302
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 315
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 377
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 629
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 754
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 56.63
-        25p: 59
-        30p: 70.13
-        50p: 118.38
-        60p: 141.38
-  QFHD:
+        "24p":
+          Data: 453
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 472
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 566
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 944
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 1131
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  2K+:
+    Res: 2048x1556px
+    Codec:
+      ProRes 422 Proxy:
+        "24p":
+          Data: 56
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 58
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 70
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 117
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 140
+          Bits: 10
+          Chroma: "4:2:2"
+      ProRes 422 LT:
+        "24p":
+          Data: 126
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 131
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 157
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 262
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 314
+          Bits: 10
+          Chroma: "4:2:2"
+      ProRes 422:
+        "24p":
+          Data: 181
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 189
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 226
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 377
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 452
+          Bits: 10
+          Chroma: "4:2:2"
+      ProRes 422 HQ:
+        "24p":
+          Data: 272
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 283
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 340
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 567
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 679
+          Bits: 10
+          Chroma: "4:2:2"
+      ProRes 4444 (no alpha):
+        "24p":
+          Data: 407
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 425
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 509
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 850
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 1019
+          Bits: "10/12"
+          Chroma: "4:4:4"
+      ProRes 4444 XQ (no alpha):
+        "24p":
+          Data: 611
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 637
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 764
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 1275
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 1528
+          Bits: "10/12"
+          Chroma: "4:4:4"
+  UHD:
     Res: 3840x2160px
     Codec:
       ProRes 422 Proxy:
-        24p: 18.13
-        25p: 18.88
-        30p: 22.75
-        50p: 37.88
-        60p: 45.38
+        "24p":
+          Data: 145
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 151
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 182
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 303
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 363
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 41
-        25p: 42.75
-        30p: 51.25
-        50p: 85.5
-        60p: 102.63
+        "24p":
+          Data: 328
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 342
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 410
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 684
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 821
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 58.88
-        25p: 61.5
-        30p: 73.63
-        50p: 122.63
-        60p: 147.88
+        "24p":
+          Data: 471
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 492
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 589
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 983
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1178
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 88.38
-        25p: 92.13
-        30p: 110.5
-        50p: 184.38
-        60p: 221
+        "24p":
+          Data: 707
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 737
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 884
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1475
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1768
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 132.13
-        25p: 137.63
-        30p: 165.75
-        50p: 276.25
-        60p: 331.5
+        "24p":
+          Data: 1061
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 1106
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 1326
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 2212
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 2652
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 198.75
-        25p: 206.88
-        30p: 247.13
-        50p: 413.25
-        60p: 496.88
+        "24p":
+          Data: 1591
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 1659
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 1989
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 3318
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 3977
+          Bits: "10/12"
+          Chroma: "4:4:4"
   4K:
     Res: 4096x2160px
     Codec:
       ProRes 422 Proxy:
-        24p: 19.38
-        25p: 20.25
-        30p: 24.25
-        50p: 40.38
-        60p: 48.5
+        "24p":
+          Data: 155
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 162
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 194
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 323
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 388
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 43.75
-        25p: 45.63
-        30p: 54.63
-        50p: 91.25
-        60p: 109.38
+        "24p":
+          Data: 350
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 365
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 437
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 730
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 875
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 62.88
-        25p: 65.5
-        30p: 78.63
-        50p: 131.13
-        60p: 157.13
+        "24p":
+          Data: 503
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 524
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 629
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1048
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1257
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 94.25
-        25p: 98.25
-        30p: 117.88
-        50p: 196.13
-        60p: 235.63
+        "24p":
+          Data: 755
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 787
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 944
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1573
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1884
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 141.38
-        25p: 147.5
-        30p: 176.75
-        50p: 294.88
-        60p: 353.5
+        "24p":
+          Data: 1130
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 1179
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 1415
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 2359
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 2827
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 212.63
-        25p: 221.13
-        30p: 265.13
-        50p: 442.38
-        60p: 530.25
+        "24p":
+          Data: 1697
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 1769
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 2123
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 3546
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 4251
+          Bits: "10/12"
+          Chroma: "4:4:4"
   5K:
     Res: 5120x2700px
     Codec:
       ProRes 422 Proxy:
-        24p: 30.38
-        25p: 31.63
-        30p: 38
-        50p: 63.38
-        60p: 76
+        "24p":
+          Data: 243
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 253
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 304
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 507
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 608
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 68.38
-        25p: 71.25
-        30p: 85.5
-        50p: 142.5
-        60p: 170.88
+        "24p":
+          Data: 547
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 570
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 684
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1140
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1367
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 98.25
-        25p: 102.38
-        30p: 122.75
-        50p: 204.75
-        60p: 245.5
+        "24p":
+          Data: 786
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 819
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 982
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1638
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1964
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 147.38
-        25p: 153.13
-        30p: 183.25
-        50p: 306.33
-        60p: 367.75
+        "24p":
+          Data: 1178
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 1229
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 1473
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 2458
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 2946
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 221.63
-        25p: 230.63
-        30p: 276.88
-        50p: 461
-        60p: 553.5
+        "24p":
+          Data: 1768
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 1843
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 2210
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 3686
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 4419
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 332.25
-        25p: 346.25
-        30p: 415.25
-        50p: 692.5
-        60p: 828.63
+        "24p":
+          Data: 2652
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 2765
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 3314
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 5530
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 6629
+          Bits: "10/12"
+          Chroma: "4:4:4"
   6K:
     Res: 6144x3240px
     Codec:
       ProRes 422 Proxy:
-        24p: 43.75
-        25p: 45.63
-        30p: 54.63
-        50p: 91.25
-        60p: 109.38
+        "24p":
+          Data: 350
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 365
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 437
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 730
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 875
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 98.25
-        25p: 102.38
-        30p: 122.75
-        50p: 204.75
-        60p: 245.5
+        "24p":
+          Data: 788
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 821
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 985
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1643
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1969
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 141.38
-        25p: 147.5
-        30p: 176.75
-        50p: 294.88
-        60p: 353.5
+        "24p":
+          Data: 1131
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 1180
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 1414
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 2359
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 2828
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 212.63
-        25p: 221.13
-        30p: 265.13
-        50p: 442.38
-        60p: 530.25
+        "24p":
+          Data: 1697
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 1769
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 2121
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 3539
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 4242
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 318.38
-        25p: 331.75
-        30p: 397.75
-        50p: 663.5
-        60p: 795.25
+        "24p":
+          Data: 2545
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 2654
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 3182
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 5308
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 6364
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 477.63
-        25p: 497.63
-        30p: 595.25
-        50p: 993.75
-        60p: 1189.38
+        "24p":
+          Data: 3818
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 3981
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 4772
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 7962
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 9545
+          Bits: "10/12"
+          Chroma: "4:4:4"
   8K:
     Res: 8192x4320px
     Codec:
       ProRes 422 Proxy:
-        24p: 77.75
-        25p: 81.13
-        30p: 97.25
-        50p: 162.25
-        60p: 194.5
+        "24p":
+          Data: 622
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 649
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 778
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 1298
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 1556
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 LT:
-        24p: 175
-        25p: 182.5
-        30p: 218.75
-        50p: 365
-        60p: 437.5
+        "24p":
+          Data: 1400
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 1460
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 1750
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 2920
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 3500
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422:
-        24p: 251.38
-        25p: 262.13
-        30p: 314.25
-        50p: 524.25
-        60p: 629.25
+        "24p":
+          Data: 2011
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 2097
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 2514
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 4194
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 5028
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 422 HQ:
-        24p: 377.63
-        25p: 393.25
-        30p: 471.38
-        50p: 786.38
-        60p: 943.25
+        "24p":
+          Data: 3017
+          Bits: 10
+          Chroma: "4:2:2"
+        "25p":
+          Data: 3146
+          Bits: 10
+          Chroma: "4:2:2"
+        "30p":
+          Data: 3771
+          Bits: 10
+          Chroma: "4:2:2"
+        "50p":
+          Data: 6291
+          Bits: 10
+          Chroma: "4:2:2"
+        "60p":
+          Data: 7542
+          Bits: 10
+          Chroma: "4:2:2"
       ProRes 4444 (no alpha):
-        24p: 566.38
-        25p: 590.88
-        30p: 707.13
-        50p: 1179.63
-        60p: 1411.63
+        "24p":
+          Data: 4525
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 4719
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 5657
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 9437
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 11313
+          Bits: "10/12"
+          Chroma: "4:4:4"
       ProRes 4444 XQ (no alpha):
-        24p: 850.88
-        25p: 884.75
-        30p: 1060.63
-        50p: 1769.5
-        60p: 2121.25
+        "24p":
+          Data: 6788
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "25p":
+          Data: 7078
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "30p":
+          Data: 8485
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "50p":
+          Data: 14156
+          Bits: "10/12"
+          Chroma: "4:4:4"
+        "60p":
+          Data: 16970
+          Bits: "10/12"
+          Chroma: "4:4:4"
 ---

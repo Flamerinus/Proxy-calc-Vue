@@ -73,7 +73,7 @@ const { codec } = Astro.props;
 
     <div class="w-full inline-flex justify-items-center">
       <Card
-        class="my-4 mx-auto w-full md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 min-w-72"
+        class="my-2 mx-auto w-full md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 min-w-80"
       >
         <CardHeader class="text-center">
           <CardTitle>{codec.data.name}</CardTitle>
@@ -83,7 +83,7 @@ const { codec } = Astro.props;
           <Selector resolvalues={codec} client:load />
         </CardContent>
         <CardFooter>
-          <p>Megabytes per second. No audio.</p>
+          <p>ProxyCalc</p>
         </CardFooter>
       </Card>
     </div>

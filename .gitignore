@@ -95,3 +95,5 @@ ASSETS/DNxHR Codec Bandwidth Specifications.htm
 ASSETS/HighRes_WorkflowsGuide.pdf
 src/components/ui/badge/Badge.vue
 src/components/ui/badge/index.ts
+src/components/ui/label/index.ts
+src/components/ui/label/Label.vue

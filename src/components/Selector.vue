@@ -7,8 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Label } from '@/components/ui/label'
 import { computed, ref, watch } from 'vue'
 
 import Button from './ui/button/Button.vue';
@@ -46,6 +46,7 @@ const bitRate = ref()
 const bitDepth = ref("")
 const chroma = ref("")
 const fileSize = ref()
+const mega= props.resolvalues.data.MB
 
 watch(selectedResolution, () => {
   const codecs = props.resolvalues.data.Resolutions[selectedResolution.value].Codec;
@@ -81,7 +82,7 @@ function calculate() {
   if (selectedFps.value) {
     const finalpath = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value][selectedFps.value]
 
-    bitRate.value = finalpath.Data
+    bitRate.value = finalpath.Data/mega
     bitDepth.value = finalpath.Bits
     chroma.value = finalpath.Chroma
 
@@ -167,15 +168,13 @@ function copytext() {
       </SelectContent>
     </Select>
   </div>
-  
-  <div v-if="selectedFps" class="my-2 flex justify-around gap-2">
-    <Badge class=" flex-none text-center"  variant="secondary">Bitrate: {{ bitRate }} MB/s</Badge>
-    <Badge class=" flex-none text-center" variant="secondary">Color depth: {{ bitDepth }} bits</Badge>
+
+  <div v-if="selectedFps" class="my-2 flex justify-around gap-1">
+    <Badge class=" flex-auto justify-center " variant="secondary"> {{ bitRate }} MB/s</Badge>
+    <Badge class=" flex-auto justify-center" variant="secondary"> {{ chroma }} </Badge>
+    <Badge class=" flex-auto justify-center" variant="secondary"> {{ bitDepth }} bits</Badge>
   </div>
 
-  <div v-if="selectedFps" class="my-2 flex justify-around gap-2">
-    <Badge class=" flex-none" variant="secondary">Chroma subsampling: {{ chroma }} </Badge>
-  </div>
 
   <div class="mx-auto my-2">
     <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
@@ -194,7 +193,8 @@ function copytext() {
   </div>
 
   <div class="my-2 flex justify-around">
-    <Badge v-if="selectedDuration && selectedFps" class="flex-none" variant="secondary">File size: {{ formattedFileSize
+    <Badge v-if="selectedDuration && selectedFps" class="flex-1 justify-center" variant="secondary">File size: {{
+      formattedFileSize
       }}</Badge>
   </div>
 
@@ -206,7 +206,8 @@ function copytext() {
           {{ selectedDuration }} of video footage in {{ selectedResolution }} -> {{ resolutionsWithResValue.find(item =>
             item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
           the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of
-          disk space, will have a bit rate of {{ bitRate }} MB/s, a color depth of {{ bitDepth }} bits and a {{ chroma }} chroma subsampling.
+          disk space, will have a bit rate of {{ bitRate }} MB/s, a color depth of {{ bitDepth }} bits and a {{ chroma
+          }} chroma subsampling. (proxycalc.rf.gd)
         </span>
       </AlertDescription>
     </Alert>
