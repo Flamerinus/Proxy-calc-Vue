@@ -97,3 +97,7 @@ src/components/ui/badge/Badge.vue
 src/components/ui/badge/index.ts
 src/components/ui/label/index.ts
 src/components/ui/label/Label.vue
+src/components/ui/hover-card/HoverCard.vue
+src/components/ui/hover-card/HoverCardContent.vue
+src/components/ui/hover-card/HoverCardTrigger.vue
+src/components/ui/hover-card/index.ts

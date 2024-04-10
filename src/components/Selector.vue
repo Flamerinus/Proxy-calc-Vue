@@ -13,6 +13,18 @@ import { computed, ref, watch } from 'vue'
 
 import Button from './ui/button/Button.vue';
 import { Badge } from '@/components/ui/badge';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
+
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
 
 const props = defineProps<{
   resolvalues: any;
@@ -46,7 +58,7 @@ const bitRate = ref()
 const bitDepth = ref("")
 const chroma = ref("")
 const fileSize = ref()
-const mega= props.resolvalues.data.MB
+const mega = props.resolvalues.data.MB
 
 watch(selectedResolution, () => {
   const codecs = props.resolvalues.data.Resolutions[selectedResolution.value].Codec;
@@ -82,7 +94,7 @@ function calculate() {
   if (selectedFps.value) {
     const finalpath = props.resolvalues.data.Resolutions[selectedResolution.value].Codec[selectedCodec.value][selectedFps.value]
 
-    bitRate.value = finalpath.Data/mega
+    bitRate.value = (finalpath.Data / mega).toFixed(2);
     bitDepth.value = finalpath.Bits
     chroma.value = finalpath.Chroma
 
@@ -170,11 +182,38 @@ function copytext() {
   </div>
 
   <div v-if="selectedFps" class="my-2 flex justify-around gap-1">
-    <Badge class=" flex-auto justify-center " variant="secondary"> {{ bitRate }} MB/s</Badge>
-    <Badge class=" flex-auto justify-center" variant="secondary"> {{ chroma }} </Badge>
-    <Badge class=" flex-auto justify-center" variant="secondary"> {{ bitDepth }} bits</Badge>
-  </div>
 
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger class="flex flex-auto justify-center">
+          <Badge class="flex-auto justify-center" variant="secondary"> {{ bitRate }} MB/s</Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Bit rate.</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger class="flex flex-auto justify-center">
+          <Badge class=" flex-auto justify-center" variant="secondary"> {{ chroma }} </Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Chroma subsampling.</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger class="flex flex-auto justify-center">
+          <Badge class=" flex-auto justify-center" variant="secondary"> {{ bitDepth }} bits</Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Color depth.</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  </div>
 
   <div class="mx-auto my-2">
     <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
@@ -193,9 +232,18 @@ function copytext() {
   </div>
 
   <div class="my-2 flex justify-around">
-    <Badge v-if="selectedDuration && selectedFps" class="flex-1 justify-center" variant="secondary">File size: {{
-      formattedFileSize
-      }}</Badge>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger class="flex flex-auto justify-center">
+          <Badge v-if="selectedDuration && selectedFps" class="flex-1 justify-center" variant="secondary">File size: {{
+            formattedFileSize
+            }}</Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Size of the generated file on disk.</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   </div>
 
   <div v-if="selectedDuration && selectedFps" class="grid w-full">
@@ -207,7 +255,7 @@ function copytext() {
             item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
           the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of
           disk space, will have a bit rate of {{ bitRate }} MB/s, a color depth of {{ bitDepth }} bits and a {{ chroma
-          }} chroma subsampling. (proxycalc.rf.gd)
+          }} chroma subsampling. (proxycalc.atwebpages.com)
         </span>
       </AlertDescription>
     </Alert>

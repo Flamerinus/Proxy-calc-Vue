@@ -6,7 +6,7 @@ bitrate: constant
 MB: 1
 Resolutions:
   FHD:
-    Res: 1920 x 1080
+    Res: 1920 x 1080px
     Codec:
       DNxHD 440x:
         60:
@@ -56,7 +56,7 @@ Resolutions:
         25:
           Data: 4.5
           Bits: "10"
-          Chroma: "4:2:2"
+          Chroma: "4:4:4"
       DNxHD 365:
         50:
           Data: 45.875
@@ -152,7 +152,7 @@ Resolutions:
           Bits: "8"
           Chroma: "4:2:2"
   HD:
-    Res: 1280 x 720
+    Res: 1280 x 720px
     Codec:
       DNxHD 220x:
         59.94:
