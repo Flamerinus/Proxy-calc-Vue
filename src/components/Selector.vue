@@ -182,14 +182,13 @@ function copytext() {
   </div>
 
   <div v-if="selectedFps" class="my-2 flex justify-around gap-1">
-
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger class="flex flex-auto justify-center">
           <Badge class="flex-auto justify-center" variant="secondary"> {{ bitRate }} MB/s</Badge>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Bit rate.</p>
+          <p>Bit rate in megabytes per second.</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

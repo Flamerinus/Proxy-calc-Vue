@@ -1,11 +1,13 @@
 ---
 import ModeToggle from "./ModeToggle.vue"
 import HeaderComp from "./HeaderComp.vue"
+import { Separator } from '@/components/ui/separator'
 ---
 <header>
-    <div class="flex justify-end">
-        <HeaderComp class="justify-self-end" client:load />
+    <div class="h-12 w-full bg-background flex justify-end fixed top-0 right-0 z-50">
+        <HeaderComp client:load />
         <ModeToggle class="flex-auto" client:load />
+        <Separator class="absolute bottom-0"/>
     </div>
     
 </header>
