@@ -237,7 +237,7 @@ function copytext() {
         <TooltipTrigger class="flex flex-auto justify-center">
           <Badge v-if="selectedDuration && selectedFps" class="flex-1 justify-center" variant="secondary">File size: {{
             formattedFileSize
-            }}</Badge>
+          }}</Badge>
         </TooltipTrigger>
         <TooltipContent>
           <p>Size of the generated file on disk.</p>

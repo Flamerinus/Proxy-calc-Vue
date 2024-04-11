@@ -101,3 +101,12 @@ src/components/ui/hover-card/HoverCard.vue
 src/components/ui/hover-card/HoverCardContent.vue
 src/components/ui/hover-card/HoverCardTrigger.vue
 src/components/ui/hover-card/index.ts
+src/components/ui/navigation-menu/index.ts
+src/components/ui/navigation-menu/NavigationMenu.vue
+src/components/ui/navigation-menu/NavigationMenuContent.vue
+src/components/ui/navigation-menu/NavigationMenuIndicator.vue
+src/components/ui/navigation-menu/NavigationMenuItem.vue
+src/components/ui/navigation-menu/NavigationMenuLink.vue
+src/components/ui/navigation-menu/NavigationMenuList.vue
+src/components/ui/navigation-menu/NavigationMenuTrigger.vue
+src/components/ui/navigation-menu/NavigationMenuViewport.vue

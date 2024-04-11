@@ -1,5 +1,11 @@
 ---
+import ModeToggle from "./ModeToggle.vue"
+import HeaderComp from "./HeaderComp.vue"
 ---
 <header>
-    <div class="h-64 bg-red-700">Test1</div>
+    <div class="flex justify-end">
+        <HeaderComp class="justify-self-end" client:load />
+        <ModeToggle class="flex-auto" client:load />
+    </div>
+    
 </header>
