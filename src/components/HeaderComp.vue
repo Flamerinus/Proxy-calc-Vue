@@ -7,6 +7,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+
 import { Button } from '@/components/ui/button'
 
 const components: { title: string, href: string, description: string }[] = [
@@ -49,6 +59,7 @@ const components: { title: string, href: string, description: string }[] = [
 </script>
 
 <template>
+  
   <NavigationMenu class="hidden sm:flex">
     <NavigationMenuList>
       <NavigationMenuItem>
@@ -101,4 +112,17 @@ const components: { title: string, href: string, description: string }[] = [
       </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
+
+  <Sheet >
+    <SheetTrigger class="sm:hidden">Open</SheetTrigger>
+    <SheetContent side="left" class="sm:hidden">
+      <SheetHeader>
+        <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+        <SheetDescription>
+          This action cannot be undone. This will permanently delete your account
+          and remove your data from our servers.
+        </SheetDescription>
+      </SheetHeader>
+    </SheetContent>
+  </Sheet>
 </template>
