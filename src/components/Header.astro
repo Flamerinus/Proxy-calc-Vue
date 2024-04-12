@@ -2,11 +2,18 @@
 import ModeToggle from "./ModeToggle.vue";
 import HeaderComp from "./HeaderComp.vue";
 import { Separator } from "@/components/ui/separator";
+import { FileVideo } from "lucide-vue-next";
 ---
 
 <header>
-    <div class="h-12 w-full bg-background flex justify-between sm:justify-end fixed top-0 right-0 z-50">
+    <div
+        class="h-14 w-full bg-background flex justify-between sm:justify-end fixed top-0 right-0 z-50"
+    >
         <HeaderComp client:load />
+        <div class="flex sm:order-first sm:mr-auto ml-2 self-center">
+            <FileVideo size={32} stroke-width={1} />
+            <span class="flex items-center text-lg">Proxycalc</span>
+        </div>
         <ModeToggle client:load />
         <Separator class="absolute bottom-0" />
     </div>

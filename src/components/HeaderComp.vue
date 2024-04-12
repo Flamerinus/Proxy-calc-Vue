@@ -114,7 +114,7 @@ const components: { title: string, href: string, description: string }[] = [
   </NavigationMenu>
 
   <Sheet >
-    <SheetTrigger class="sm:hidden">Open</SheetTrigger>
+    <SheetTrigger class="sm:hidden ml-2">Open</SheetTrigger>
     <SheetContent side="left" class="sm:hidden">
       <SheetHeader>
         <SheetTitle>Are you sure absolutely sure?</SheetTitle>
