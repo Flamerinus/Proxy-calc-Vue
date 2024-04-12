@@ -5,11 +5,11 @@ export default {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
-    content: [
-      './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    ],
-  
+
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+  ],
+
   theme: {
     container: {
       center: true,
@@ -19,6 +19,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        "sm": "600px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,7 +58,7 @@ export default {
         },
       },
       borderRadius: {
-      	xl: "calc(var(--radius) + 4px)",
+        xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
