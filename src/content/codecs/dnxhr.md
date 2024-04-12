@@ -113,7 +113,7 @@ Resolutions:
           Data: 104.19
           Bits: "10/12"
           Chroma: "4:4:4"
-  2K:
+  DCI 2K:
     Res: 2048x1080px
     Codec:
       DNxHR LB:
@@ -329,7 +329,7 @@ Resolutions:
           Data: 416.54
           Bits: "10/12"
           Chroma: "4:4:4"
-  4K:
+  DCI 4K:
     Res: 4096x2160px
     Codec:
       DNxHR LB:

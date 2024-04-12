@@ -131,7 +131,7 @@ function copytext() {
 
 </script>
 <template>
-  <div class="mx-auto my-2">
+  <div class="mx-auto my-1">
     <Select name="resolution-selector" v-model="selectedResolution">
       <Label for="resolution">Resolution</Label>
       <SelectTrigger>
@@ -147,7 +147,7 @@ function copytext() {
     </Select>
   </div>
 
-  <div class="mx-auto my-2">
+  <div class="mx-auto my-1">
     <Select v-if="selectedResolution" name="codec-selector" v-model="selectedCodec">
       <Label for="codec">Codec</Label>
       <SelectTrigger>
@@ -165,7 +165,7 @@ function copytext() {
     </Select>
   </div>
 
-  <div class="mx-auto my-2">
+  <div class="mx-auto my-1">
     <Select v-if="selectedCodec" name="fps-selector" v-model="selectedFps">
       <Label for="framerate">Frame rate</Label>
       <SelectTrigger>
@@ -214,7 +214,7 @@ function copytext() {
     </TooltipProvider>
   </div>
 
-  <div class="mx-auto my-2">
+  <div class="mx-auto my-1">
     <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
       <Label for="duration">Duration</Label>
       <SelectTrigger>

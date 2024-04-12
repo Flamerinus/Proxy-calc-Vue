@@ -95,7 +95,7 @@ Resolutions:
           Data: 138
           Bits: "10/12"
           Chroma: "4:4:4"
-  Mini:
+  DVCPRO100:
     Res: 960x720px
     Codec:
       ProRes 422 Proxy:
@@ -353,7 +353,7 @@ Resolutions:
           Data: 495
           Bits: "10/12"
           Chroma: "4:4:4"
-  Maxi:
+  DVCPRO HD:
     Res: 1280x1080px
     Codec:
       ProRes 422 Proxy:
@@ -410,7 +410,7 @@ Resolutions:
           Data: 424
           Bits: "10/12"
           Chroma: "4:4:4"
-  Extra:
+  HDV:
     Res: 1440x1080px
     Codec:
       ProRes 422 Proxy:
@@ -620,7 +620,7 @@ Resolutions:
           Data: 990
           Bits: "10/12"
           Chroma: "4:4:4"
-  2K:
+  DCI 2K:
     Res: 2048x1080px
     Codec:
       ProRes 422 Proxy:
@@ -749,7 +749,7 @@ Resolutions:
           Data: 1131
           Bits: "10/12"
           Chroma: "4:4:4"
-  2K+:
+  Full Aperture Native:
     Res: 2048x1556px
     Codec:
       ProRes 422 Proxy:
@@ -1007,7 +1007,7 @@ Resolutions:
           Data: 3977
           Bits: "10/12"
           Chroma: "4:4:4"
-  4K:
+  DCI 4K:
     Res: 4096x2160px
     Codec:
       ProRes 422 Proxy:
@@ -1394,7 +1394,7 @@ Resolutions:
           Data: 9545
           Bits: "10/12"
           Chroma: "4:4:4"
-  8K:
+  DCI 8K:
     Res: 8192x4320px
     Codec:
       ProRes 422 Proxy:

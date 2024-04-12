@@ -49,7 +49,7 @@ const components: { title: string, href: string, description: string }[] = [
 </script>
 
 <template>
-  <NavigationMenu >
+  <NavigationMenu class="hidden sm:flex">
     <NavigationMenuList>
       <NavigationMenuItem>
         <NavigationMenuTrigger>Codecs</NavigationMenuTrigger>
