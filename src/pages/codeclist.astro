@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import { Button } from "@/components/ui/button";
+import { getCollection } from "astro:content";
+
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+const codecs = await getCollection("codecs");
+//console.log(codecs);
+---
+
+<Layout title={"Proxy Calc > codec list"}>
+	<main>
+		<Breadcrumb>
+			<BreadcrumbList>
+				<BreadcrumbItem>
+					<BreadcrumbLink>
+						<a href="/"> Proxycalc </a>
+					</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<BreadcrumbLink>
+						<a href="/codeclist"> Codec list </a>
+					</BreadcrumbLink>
+				</BreadcrumbItem>
+			</BreadcrumbList>
+		</Breadcrumb>
+		{
+			codecs.map((codec) => (
+				<a href={`/codeclist/${codec.slug}`}>
+					<Button>{codec.data.title}</Button>
+				</a>
+			))
+		}
+	</main>
+</Layout>

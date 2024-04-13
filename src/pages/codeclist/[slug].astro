@@ -54,15 +54,20 @@ const { codec } = Astro.props;
 
 <Layout title={"Proxy Calc > " + codec.data.title}>
   <main>
+
+    <div class="inline-flex items-center">
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          {
-            (
-              // @ts-ignore
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            )
-          }
+          <BreadcrumbLink>
+            <a href="/">Proxycalc</a>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <a href="/codeclist">Codec list</a>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -70,7 +75,9 @@ const { codec } = Astro.props;
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
+  </div>
 
+  
     <div class="w-full inline-flex justify-items-center">
       <Card
         class="my-2 mx-auto w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 min-w-80"

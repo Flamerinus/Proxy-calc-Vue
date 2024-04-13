@@ -59,21 +59,16 @@ const components: { title: string, href: string, description: string }[] = [
 </script>
 
 <template>
-  
+
   <NavigationMenu class="hidden sm:flex">
     <NavigationMenuList>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Codecs</NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-            <ListItem v-for="component in components" :key="component.title" :title="component.title"
-              :href="component.href"> {{ component.description }}
-            </ListItem>
-          </ul>
-        </NavigationMenuContent>
+        <NavigationMenuLink href="/codeclist">
+          <Button variant="ghost">Codec list</Button>
+        </NavigationMenuLink>
       </NavigationMenuItem>
 
-      <NavigationMenuItem >
+      <NavigationMenuItem>
         <NavigationMenuTrigger>Documentation</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)]">
@@ -106,14 +101,14 @@ const components: { title: string, href: string, description: string }[] = [
       </NavigationMenuItem>
 
       <NavigationMenuItem>
-        <NavigationMenuLink href="/docs" >
+        <NavigationMenuLink href="/about">
           <Button variant="ghost">About</Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
 
-  <Sheet >
+  <Sheet>
     <SheetTrigger class="sm:hidden ml-2">Open</SheetTrigger>
     <SheetContent side="left" class="sm:hidden">
       <SheetHeader>
