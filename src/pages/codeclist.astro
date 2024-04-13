@@ -19,27 +19,29 @@ const codecs = await getCollection("codecs");
 
 <Layout title={"Proxy Calc > codec list"}>
 	<main>
-		<Breadcrumb>
-			<BreadcrumbList>
-				<BreadcrumbItem>
-					<BreadcrumbLink>
-						<a href="/"> Proxycalc </a>
-					</BreadcrumbLink>
-				</BreadcrumbItem>
-				<BreadcrumbSeparator />
-				<BreadcrumbItem>
-					<BreadcrumbLink>
-						<a href="/codeclist"> Codec list </a>
-					</BreadcrumbLink>
-				</BreadcrumbItem>
-			</BreadcrumbList>
-		</Breadcrumb>
-		{
-			codecs.map((codec) => (
-				<a href={`/codeclist/${codec.slug}`}>
-					<Button>{codec.data.title}</Button>
-				</a>
-			))
-		}
+		<div class="inline-flex items-center">
+			<Breadcrumb>
+				<BreadcrumbList>
+					<BreadcrumbItem>
+						<BreadcrumbLink>
+							<a href="/">Proxycalc</a>
+						</BreadcrumbLink>
+					</BreadcrumbItem>
+					<BreadcrumbSeparator />
+					<BreadcrumbItem>
+						<BreadcrumbPage>Codec list</BreadcrumbPage>
+					</BreadcrumbItem>
+				</BreadcrumbList>
+			</Breadcrumb>
+		</div>
+		<div>
+			{
+				codecs.map((codec) => (
+					<a href={`/codeclist/${codec.slug}`}>
+						<Button>{codec.data.title}</Button>
+					</a>
+				))
+			}
+		</div>
 	</main>
 </Layout>

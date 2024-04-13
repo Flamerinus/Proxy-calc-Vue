@@ -22,13 +22,6 @@ pnpm-debug.log*
 .vscode/extensions.json
 .vscode/launch.json
 public/favicon.svg
-src/components/ui/breadcrumb/Breadcrumb.vue
-src/components/ui/breadcrumb/BreadcrumbEllipsis.vue
-src/components/ui/breadcrumb/BreadcrumbItem.vue
-src/components/ui/breadcrumb/BreadcrumbLink.vue
-src/components/ui/breadcrumb/BreadcrumbList.vue
-src/components/ui/breadcrumb/BreadcrumbPage.vue
-src/components/ui/breadcrumb/BreadcrumbSeparator.vue
 src/components/ui/breadcrumb/index.ts
 src/components/ui/button/Button.vue
 src/components/ui/button/index.ts

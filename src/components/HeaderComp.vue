@@ -8,6 +8,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 
+
 import {
   Sheet,
   SheetContent,
@@ -19,54 +20,13 @@ import {
 
 import { Button } from '@/components/ui/button'
 
-const components: { title: string, href: string, description: string }[] = [
-  {
-    title: 'Alert Dialog',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
-  },
-  {
-    title: 'Hover Card',
-    href: '/docs/primitives/hover-card',
-    description:
-      'For sighted users to preview content available behind a link.',
-  },
-  {
-    title: 'Progress',
-    href: '/docs/primitives/progress',
-    description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
-  },
-  {
-    title: 'Scroll-area',
-    href: '/docs/primitives/scroll-area',
-    description: 'Visually or semantically separates content.',
-  },
-  {
-    title: 'Tabs',
-    href: '/docs/primitives/tabs',
-    description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
-  },
-  {
-    title: 'Tooltip',
-    href: '/docs/primitives/tooltip',
-    description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
-  },
-]
 </script>
 
 <template>
 
   <NavigationMenu class="hidden sm:flex">
     <NavigationMenuList>
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/codeclist">
-          <Button variant="ghost">Codec list</Button>
-        </NavigationMenuLink>
-      </NavigationMenuItem>
+      
 
       <NavigationMenuItem>
         <NavigationMenuTrigger>Documentation</NavigationMenuTrigger>
@@ -87,9 +47,9 @@ const components: { title: string, href: string, description: string }[] = [
                 </a>
               </NavigationMenuLink>
             </li>
-            <ListItem href="/docs" title="Introduction">
+            <li href="/docs" title="Introduction">
               Re-usable components built using Radix UI and Tailwind CSS.
-            </ListItem>
+            </li>
             <ListItem href="/docs/installation" title="Installation">
               How to install dependencies and structure your app.
             </ListItem>
@@ -100,6 +60,12 @@ const components: { title: string, href: string, description: string }[] = [
         </NavigationMenuContent>
       </NavigationMenuItem>
 
+      <NavigationMenuItem>
+        <NavigationMenuLink href="/codeclist">
+          <Button variant="ghost">Codec list</Button>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      
       <NavigationMenuItem>
         <NavigationMenuLink href="/about">
           <Button variant="ghost">About</Button>

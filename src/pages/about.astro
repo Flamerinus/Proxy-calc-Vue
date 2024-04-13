@@ -1,20 +1,35 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import '@/styles/globals.css';
-import { Button } from '@/components/ui/button';
-import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import { Button } from "@/components/ui/button";
 
-const codecs = await getCollection("codecs");
-//console.log(codecs);
-
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 ---
-
 
 <Layout title={"Proxy Calc > about"}>
 	<main>
-				
-		ABOUT TEST
-		
+		<div class="inline-flex items-center">
+			<Breadcrumb>
+				<BreadcrumbList>
+					<BreadcrumbItem>
+						<BreadcrumbLink>
+							<a href="/">Proxycalc</a>
+						</BreadcrumbLink>
+					</BreadcrumbItem>
+					<BreadcrumbSeparator />
+					<BreadcrumbItem>
+						<BreadcrumbPage>About</BreadcrumbPage>
+					</BreadcrumbItem>
+				</BreadcrumbList>
+			</Breadcrumb>
+		</div>
+		<div>ABOUT TEST</div>
 	</main>
 </Layout>
-
