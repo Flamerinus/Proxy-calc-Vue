@@ -7,7 +7,7 @@ import { FileVideo } from "lucide-vue-next";
 
 <header>
     <div
-        class="h-14 w-full bg-background flex justify-between sm:justify-end fixed top-0 right-0 z-50"
+        class="h-14 mx-auto w-full max-w-screen-2xl bg-background flex justify-between sm:justify-end fixed inset-x-0 right-0 z-50"
     >
         <HeaderComp client:load />
         <div class="flex sm:order-first sm:mr-auto ml-2 self-center">
@@ -20,5 +20,7 @@ import { FileVideo } from "lucide-vue-next";
         </div>
         <ModeToggle client:load />
         <Separator class="absolute bottom-0" />
+        <Separator class="absolute left-0 hidden 2xl:block" orientation="vertical" />
+        <Separator class="absolute right-0 hidden 2xl:block" orientation="vertical" />
     </div>
 </header>

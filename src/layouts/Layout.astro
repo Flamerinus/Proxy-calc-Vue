@@ -6,6 +6,9 @@ interface Props {
 const { title } = Astro.props;
 import "../styles/globals.css";
 import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+import { Separator } from "@/components/ui/separator";
 ---
 
 <!doctype html>
@@ -49,8 +52,19 @@ import Header from "@/components/Header.astro";
 	</head>
 	<body>
 		<Header />
-		<div class="container absolute inset-x-0 top-14 z-0">
+		<div
+			class="container h-auto max-w-screen-xl relative inset-x-0 top-14 z-0"
+		>
+			<Separator
+				class="h-full absolute -left-32 hidden 2xl:block"
+				orientation="vertical"
+			/>
+			<Separator
+				class="h-full absolute -right-32 hidden 2xl:block"
+				orientation="vertical"
+			/>
 			<slot />
+			<Footer />
 		</div>
 	</body>
 </html>
