@@ -8,7 +8,7 @@ import "../styles/globals.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
-import { Separator } from "@/components/ui/separator";
+// header-height variable defined in globals.css
 ---
 
 <!doctype html>
@@ -50,13 +50,17 @@ import { Separator } from "@/components/ui/separator";
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="flex flex-col h-screen" style="height: calc(100vh - var(--header-height));">
 		<Header />
 		<div
-			class="container h-auto max-w-screen-xl relative inset-x-0 top-14 z-0"
+			class="container max-w-screen-xl flex-grow relative inset-x-0 top-14 z-0"
 		>
-			<slot />
-			<Footer />
+			<div class="flex-grow pb-10">
+				<slot />
+			</div>
+			<div class="absolute bottom-0 inset-x-0 w-full">
+				<Footer />
+			</div>
 		</div>
 	</body>
 </html>
