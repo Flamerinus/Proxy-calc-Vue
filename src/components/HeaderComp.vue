@@ -8,6 +8,9 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 
+import { ListVideo, LucideFileQuestion } from 'lucide-vue-next';
+import { Files } from 'lucide-vue-next';
+import { FileQuestion } from 'lucide-vue-next';
 
 import {
   Sheet,
@@ -24,12 +27,13 @@ import { Button } from '@/components/ui/button'
 
 <template>
 
-  <NavigationMenu class="hidden sm:flex">
+  <NavigationMenu class="hidden sm:flex ">
     <NavigationMenuList>
-      
-
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Documentation</NavigationMenuTrigger>
+        <NavigationMenuTrigger class="text-base px-2">
+          <Files :size=24 :stroke-width=2 />
+          Documentation
+        </NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)]">
             <li class="row-span-3">
@@ -62,13 +66,19 @@ import { Button } from '@/components/ui/button'
 
       <NavigationMenuItem>
         <NavigationMenuLink href="/codeclist">
-          <Button variant="ghost">Codec list</Button>
+          <Button class="text-base px-2" variant="ghost">
+            <ListVideo :size=24 :stroke-width=2 />
+            Codec list
+          </Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
-      
+
       <NavigationMenuItem>
         <NavigationMenuLink href="/about">
-          <Button variant="ghost">About</Button>
+          <Button class="text-base px-2" variant="ghost">
+            <FileQuestion :size=24 :stroke-width=2 />
+            About
+          </Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>

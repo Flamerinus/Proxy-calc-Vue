@@ -11,6 +11,9 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
+import { Home } from 'lucide-vue-next';
+
 ---
 
 <Layout title={"Proxy Calc > about"}>
@@ -19,9 +22,11 @@ import {
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink>
-							<a href="/">Proxycalc</a>
-						</BreadcrumbLink>
+						<BreadcrumbLink >
+							<a href="/">
+							<Home size={20} stroke-width={1.5}/>
+							</a>
+						  </BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>

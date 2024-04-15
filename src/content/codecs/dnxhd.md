@@ -82,6 +82,10 @@ Resolutions:
           Data: 27.5
           Bits: "8"
           Chroma: "4:2:2"
+        59.94:
+          Data: 27.5
+          Bits: "8"
+          Chroma: "4:2:2"  
       DNxHD 145:
         29.97:
           Data: 18.125
@@ -168,10 +172,6 @@ Resolutions:
           Data: 27.5
           Bits: "8"
           Chroma: "4:2:2"
-        29.97:
-          Data: 27.5
-          Bits: "8"
-          Chroma: "4:2:2"
       DNxHD 145:
         59.94:
           Data: 18.125
@@ -183,10 +183,6 @@ Resolutions:
           Chroma: "4:2:2"
       DNxHD 100:
         59.94:
-          Data: 12.5
-          Bits: "8"
-          Chroma: "4:2:2"
-        29.97:
           Data: 12.5
           Bits: "8"
           Chroma: "4:2:2"

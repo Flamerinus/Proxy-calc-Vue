@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import { Button } from "@/components/ui/button";
 import { getCollection } from "astro:content";
+import { Home } from 'lucide-vue-next';
+
 
 import {
 	Breadcrumb,
@@ -23,9 +25,10 @@ const codecs = await getCollection("codecs");
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink>
-							<a href="/">Proxycalc</a>
-						</BreadcrumbLink>
+						<BreadcrumbLink >
+							<a href="/">
+							<Home size={20} stroke-width={1.5}/>
+							</a>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>

@@ -26,6 +26,8 @@ import {
 
 import Selector from "@/components/Selector.vue";
 
+import { Home } from 'lucide-vue-next';
+
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const getStaticPaths = async () => {
@@ -58,8 +60,10 @@ const { codec } = Astro.props;
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink>
-              <a href="/">Proxycalc</a>
+            <BreadcrumbLink >
+              <a href="/">
+              <Home size={20} stroke-width={1.5}/>
+              </a>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
