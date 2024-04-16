@@ -1,17 +1,20 @@
 ---
-import { Separator } from "@/components/ui/separator";
-import { FileVideo, SeparatorVerticalIcon } from "lucide-vue-next";
-import { Button } from "@/components/ui/button";
+import { FileVideo } from "lucide-vue-next";
 ---
 
 <footer>
     <div
-        class="text-sm mx-auto w-full flex flex-wrap my-2 items-center gap-2 justify-center bottom-0 inset-x-0"
+        class="text-sm text-muted-foreground mx-auto w-full flex flex-wrap my-2 items-center gap-2 sm:gap-4 justify-center bottom-0 inset-x-0"
     >
-        <p class="text-muted-foreground">Hola</p>
-        <p class="text-muted-foreground">|</p>
-        <a href="/about">About</a>
-        <p class="text-muted-foreground">|</p>
+        <div class="flex items-center">
+            <a href="/"><FileVideo size={24} stroke-width={1} /></a>
+            <a href="/">Proxycalc</a>
+        </div>
+        <p>|</p>
+        <a href="/documentation">Docs</a>
+        <p>|</p>
         <a href="/codeclist">Codec list</a>
+        <p>|</p>
+        <a href="/about">About</a>
     </div>
 </footer>
