@@ -1,4 +1,4 @@
-import { defineCollection, z} from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const codecsCollection = defineCollection({
     schema: z.object({
@@ -10,6 +10,17 @@ const codecsCollection = defineCollection({
     }),
 });
 
+const docsCollection = defineCollection(
+    {
+        schema: z.object({
+            title: z.string(),
+            
+            
+        }),
+    }
+);
+
 export const collections = {
     codecs: codecsCollection,
+    docs: docsCollection,
 };

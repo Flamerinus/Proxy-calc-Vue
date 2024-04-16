@@ -21,7 +21,6 @@ pnpm-debug.log*
 .DS_Store
 .vscode/extensions.json
 .vscode/launch.json
-public/favicon.svg
 src/components/ui/breadcrumb/index.ts
 src/components/ui/button/Button.vue
 src/components/ui/button/index.ts

@@ -15,11 +15,11 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const codecs = await getCollection("codecs");
+const docs = await getCollection("docs");
 //console.log(codecs);
 ---
 
-<Layout title={"Proxy Calc > codec list"}>
+<Layout title={"Proxy Calc > Documentation"}>
 	<main>
 		<div class="inline-flex items-center">
 			<Breadcrumb>
@@ -32,16 +32,16 @@ const codecs = await getCollection("codecs");
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>
-						<BreadcrumbPage>Codec list</BreadcrumbPage>
+						<BreadcrumbPage>Documentation</BreadcrumbPage>
 					</BreadcrumbItem>
 				</BreadcrumbList>
 			</Breadcrumb>
 		</div>
 		<div>
 			{
-				codecs.map((codec) => (
-					<a href={`/codeclist/${codec.slug}`}>
-						<Button>{codec.data.title}</Button>
+				docs.map((doc) => (
+					<a href={`/docs/${doc.slug}`}>
+						<Button>{doc.data.title}</Button>
 					</a>
 				))
 			}

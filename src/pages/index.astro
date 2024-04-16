@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import '@/styles/globals.css';
-import { Button } from '@/components/ui/button';
 import { getCollection } from "astro:content";
 
 const codecs = await getCollection("codecs");
@@ -10,9 +9,13 @@ const codecs = await getCollection("codecs");
 ---
 
 
-<Layout title={"Proxy Calc"}>
+<Layout title={"Proxycalc"}>
 	<main>
-		INDEX	
+		Welcome to Proxycalc!
+
+		Calculate the approximate size of your footage in storage.
+
+		Learn about key concepts in the video encoding world.
 	</main>
 </Layout>
 

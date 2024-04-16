@@ -10,35 +10,22 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    CardTitle,
 } from "@/components/ui/card";
 
-import Selector from "@/components/Selector.vue";
-
-import { Home } from 'lucide-vue-next';
+import { Home } from "lucide-vue-next";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const getStaticPaths = async () => {
-  const codecs = await getCollection("codecs");
-  const paths = codecs.map((codec) => {
+  const docs = await getCollection("docs");
+  const paths = docs.map((doc) => {
     return {
       params: {
-        slug: codec.slug,
+        slug: doc.slug,
       },
       props: {
-        codec,
+        doc,
       },
     };
   });
@@ -46,84 +33,43 @@ export const getStaticPaths = async () => {
 };
 
 type Props = {
-  codec: CollectionEntry<"codecs">;
+  doc: CollectionEntry<"docs">;
 };
 
-const { codec } = Astro.props;
+const { doc } = Astro.props;
 
 //console.dir(codec, { depth: null });
 ---
 
-<Layout title={"Proxy Calc > " + codec.data.title}>
+<Layout title={"Proxy Calc > " + doc.data.title}>
   <main>
     <div class="inline-flex items-center">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink >
+            <BreadcrumbLink>
               <a href="/">
-              <Home size={20} stroke-width={1.5}/>
+                <Home size={20} stroke-width={1.5} />
               </a>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <a href="/codeclist">Codec list</a>
+              <a href="/docs">Documentation</a>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{codec.data.title}</BreadcrumbPage>
+            <BreadcrumbPage>{doc.data.title}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
     </div>
 
-    <div class="w-full inline-flex justify-items-center">
-      <Card
-        class="my-2 mx-auto w-full sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-3/5 min-w-80"
-      >
-        <CardHeader class="text-center">
-          <CardTitle>{codec.data.name}</CardTitle>
-          <CardDescription>Bitrate: {codec.data.bitrate}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Selector resolvalues={codec} client:load />
-        </CardContent>
-        <CardFooter>
-          <p>ProxyCalc</p>
-        </CardFooter>
-      </Card>
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugit
-      nulla, officia laudantium id voluptatibus ab voluptate debitis veritatis
-      modi odit totam recusandae cupiditate, neque quaerat nam, similique
-      labore explicabo. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Adipisci fugit nulla, officia laudantium id voluptatibus ab
-      voluptate debitis veritatis modi odit totam recusandae cupiditate, neque
-      quaerat nam, similique labore explicabo. Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Adipisci fugit nulla, officia laudantium
-      id voluptatibus ab voluptate debitis veritatis modi odit totam
-      recusandae cupiditate, neque quaerat nam, similique labore explicabo.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugit
-      nulla, officia laudantium id voluptatibus ab voluptate debitis veritatis
-      modi odit totam recusandae cupiditate, neque quaerat nam, similique
-      labore explicabo. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Adipisci fugit nulla, officia laudantium id voluptatibus ab
-      voluptate debitis veritatis modi odit totam recusandae cupiditate, neque
-      quaerat nam, similique labore explicabo. Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Adipisci fugit nulla, officia laudantium
-      id voluptatibus ab voluptate debitis veritatis modi odit totam
-      recusandae cupiditate, neque quaerat nam, similique labore explicabo.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugit
-      nulla, officia laudantium id voluptatibus ab voluptate debitis veritatis
-      modi odit totam recusandae cupiditate, neque quaerat nam, similique
-      labore explicabo. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Adipisci fugit nulla, officia laudantium id voluptatibus ab
-      voluptate debitis veritatis modi odit totam recusandae cupiditate, neque
-      quaerat nam, similique labore explicabo.
+    <div class="my-2">
+      <CardTitle class="text-center my-2">{doc.data.title}</CardTitle>
+      {doc.body}
     </div>
   </main>
 </Layout>
