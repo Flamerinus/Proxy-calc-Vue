@@ -2,7 +2,14 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import { Button } from "@/components/ui/button";
-
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -12,21 +19,22 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Home } from 'lucide-vue-next';
-
+import { Home, ArrowDown } from "lucide-vue-next";
+import { Image } from "astro:assets";
+import myFace from "../images/faceavatarflamerinus.png";
 ---
 
-<Layout title={"Proxy Calc > about"}>
+<Layout title={"Proxy Calc > About"}>
 	<main>
 		<div class="inline-flex items-center">
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink >
+						<BreadcrumbLink>
 							<a href="/">
-							<Home size={20} stroke-width={1.5}/>
+								<Home size={20} stroke-width={1.5} />
 							</a>
-						  </BreadcrumbLink>
+						</BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>
@@ -35,6 +43,192 @@ import { Home } from 'lucide-vue-next';
 				</BreadcrumbList>
 			</Breadcrumb>
 		</div>
-		<div>ABOUT TEST</div>
+		<div class="flex justify-center">
+			<div class="max-w-96 sm:max-w-full">
+				<Card class="my-4 mx-auto max-w-96">
+					<a
+						href="https://github.com/Flamerinus"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex flex-col h-full"
+					>
+						<CardHeader
+							class="flex flex-row items-center justify-between"
+						>
+							<CardTitle>Made by Flamerinus</CardTitle>
+							<Image
+								src={myFace}
+								alt={"Flamerinus face"}
+								class="rounded-full w-16 h-16 xl:w-20 xl:h-20 "
+							/>
+						</CardHeader>
+					</a>
+					<CardFooter>
+						<CardDescription>List of tools used:</CardDescription>
+						<ArrowDown size={20} stroke-width={2} /></CardFooter
+					>
+				</Card>
+				<div
+					class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-2"
+				>
+					<div class="flex flex-col">
+						<Card class="flex-grow">
+							<a
+								href="https://astro.build/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-col h-full"
+							>
+								<CardHeader>
+									<CardTitle>Astro</CardTitle>
+									<CardDescription
+										>The web framework for content-driven
+										websites.</CardDescription
+									>
+								</CardHeader>
+								<CardContent
+									class="flex justify-center items-center flex-grow"
+								>
+									<img
+										src="/astro-logo-light.svg"
+										alt="Astro logo"
+										class="max-h-20 hidden dark:flex"
+									/>
+
+									<img
+										src="/astro-logo-dark.svg"
+										alt="Astro logo"
+										class="max-h-20 flex dark:hidden"
+									/>
+								</CardContent>
+								<CardFooter> https://astro.build/ </CardFooter>
+							</a>
+						</Card>
+					</div>
+
+					<div class="flex flex-col">
+						<Card class="flex-grow">
+							<a
+								href="https://vuejs.org/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-col h-full"
+							>
+								<CardHeader>
+									<CardTitle>Vue.js</CardTitle>
+									<CardDescription
+										>The Progressive JavaScript Framework.</CardDescription
+									>
+								</CardHeader>
+								<CardContent
+									class="flex justify-center items-center flex-grow"
+								>
+									<img
+										src="/vue-logo.svg"
+										alt="Vue.js logo"
+										class="max-h-20"
+									/>
+								</CardContent>
+								<CardFooter> https://vuejs.org/ </CardFooter>
+							</a>
+						</Card>
+					</div>
+					<div class="flex flex-col">
+						<Card class="flex-grow">
+							<a
+								href="https://www.shadcn-vue.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-col h-full"
+							>
+								<CardHeader>
+									<CardTitle>Shadcn-vue</CardTitle>
+									<CardDescription
+										>Re-usable components built with Radix
+										Vue, and Tailwind CSS.</CardDescription
+									>
+								</CardHeader>
+								<CardContent
+									class="flex justify-center items-center flex-grow"
+								>
+									<img
+										src="/shadcn-vue-logo-black.svg"
+										alt="Shadcn-vue logo"
+										class="max-h-20"
+									/>
+								</CardContent>
+								<CardFooter>
+									https://shadcn-vue.com/
+								</CardFooter>
+							</a>
+						</Card>
+					</div>
+					<div class="flex flex-col">
+						<Card class="flex-grow">
+							<a
+								href="https://tailwindcss.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-col h-full"
+							>
+								<CardHeader>
+									<CardTitle>Tailwindcss</CardTitle>
+									<CardDescription
+										>Rapidly build modern websites without
+										ever leaving your HTML.</CardDescription
+									>
+								</CardHeader>
+								<CardContent
+									class="flex justify-center items-center flex-grow"
+								>
+									<img
+										src="/tailwindcss-logo.svg"
+										alt="Tailwind css logo"
+										class="max-h-20"
+									/>
+								</CardContent>
+								<CardFooter>
+									https://tailwindcss.com/
+								</CardFooter>
+							</a>
+						</Card>
+					</div>
+					<div class="flex flex-col">
+						<Card class="flex-grow">
+							<a
+								href="https://lucide.dev/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-col h-full"
+							>
+								<CardHeader>
+									<CardTitle>Lucide</CardTitle>
+									<CardDescription
+										>Beautiful & consistent icons Made by
+										the community.</CardDescription
+									>
+								</CardHeader>
+								<CardContent
+									class="flex justify-center items-center flex-grow"
+								>
+									<img
+										src="/lucide-logo-dark.svg"
+										alt="Lucide.dev logo"
+										class="max-h-20 hidden dark:flex"
+									/>
+
+									<img
+										src="/lucide-logo-light.svg"
+										alt="Lucide.dev logo"
+										class="max-h-20 flex dark:hidden"
+									/>
+								</CardContent>
+								<CardFooter> https://lucide.dev/ </CardFooter>
+							</a>
+						</Card>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 </Layout>

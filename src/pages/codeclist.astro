@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { getCollection } from "astro:content";
 import { Home } from 'lucide-vue-next';
 
-
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -19,7 +18,7 @@ const codecs = await getCollection("codecs");
 //console.log(codecs);
 ---
 
-<Layout title={"Proxy Calc > codec list"}>
+<Layout title={"Proxy Calc > Codec list"}>
 	<main>
 		<div class="inline-flex items-center">
 			<Breadcrumb>
@@ -37,7 +36,7 @@ const codecs = await getCollection("codecs");
 				</BreadcrumbList>
 			</Breadcrumb>
 		</div>
-		<div>
+		<div class="">
 			{
 				codecs.map((codec) => (
 					<a href={`/codeclist/${codec.slug}`}>
