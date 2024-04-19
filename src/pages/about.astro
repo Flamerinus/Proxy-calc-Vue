@@ -21,7 +21,7 @@ import {
 
 import { Home, ArrowDown } from "lucide-vue-next";
 import { Image } from "astro:assets";
-import myFace from "../images/faceavatarflamerinus.png";
+import myFace from "../images/faceavatarv2.png";
 ---
 
 <Layout title={"Proxy Calc > About"}>
@@ -53,20 +53,21 @@ import myFace from "../images/faceavatarflamerinus.png";
 						class="flex flex-col h-full"
 					>
 						<CardHeader
-							class="flex flex-row items-center justify-between"
+							class="flex flex-row items-center justify-between py-2"
 						>
-							<CardTitle>Made by Flamerinus</CardTitle>
+						<div class="flex items-center flex-grow justify-around">
 							<Image
 								src={myFace}
 								alt={"Flamerinus face"}
-								class="rounded-full w-16 h-16 xl:w-20 xl:h-20 "
+								class="rounded-full w-12 h-12 xl:w-16 xl:h-16"
 							/>
+							<CardDescription>Code by <span class="text-foreground">Flamerinus</span>.</CardDescription>
+						</div>
+							<div class="flex items-center flex-grow justify-center">
+							<CardDescription>Tools used:</CardDescription>
+							<ArrowDown size={16} stroke-width={2} /></div>
 						</CardHeader>
 					</a>
-					<CardFooter>
-						<CardDescription>List of tools used:</CardDescription>
-						<ArrowDown size={20} stroke-width={2} /></CardFooter
-					>
 				</Card>
 				<div
 					class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-2"
@@ -92,13 +93,13 @@ import myFace from "../images/faceavatarflamerinus.png";
 									<img
 										src="/astro-logo-light.svg"
 										alt="Astro logo"
-										class="max-h-20 hidden dark:flex"
+										class="max-h-16 hidden dark:flex"
 									/>
 
 									<img
 										src="/astro-logo-dark.svg"
 										alt="Astro logo"
-										class="max-h-20 flex dark:hidden"
+										class="max-h-16 flex dark:hidden"
 									/>
 								</CardContent>
 								<CardFooter> https://astro.build/ </CardFooter>
@@ -126,7 +127,7 @@ import myFace from "../images/faceavatarflamerinus.png";
 									<img
 										src="/vue-logo.svg"
 										alt="Vue.js logo"
-										class="max-h-20"
+										class="max-h-16"
 									/>
 								</CardContent>
 								<CardFooter> https://vuejs.org/ </CardFooter>
@@ -154,7 +155,7 @@ import myFace from "../images/faceavatarflamerinus.png";
 									<img
 										src="/shadcn-vue-logo-black.svg"
 										alt="Shadcn-vue logo"
-										class="max-h-20"
+										class="max-h-16"
 									/>
 								</CardContent>
 								<CardFooter>
@@ -184,7 +185,7 @@ import myFace from "../images/faceavatarflamerinus.png";
 									<img
 										src="/tailwindcss-logo.svg"
 										alt="Tailwind css logo"
-										class="max-h-20"
+										class="max-h-16"
 									/>
 								</CardContent>
 								<CardFooter>
@@ -214,13 +215,13 @@ import myFace from "../images/faceavatarflamerinus.png";
 									<img
 										src="/lucide-logo-dark.svg"
 										alt="Lucide.dev logo"
-										class="max-h-20 hidden dark:flex"
+										class="max-h-16 hidden dark:flex"
 									/>
 
 									<img
 										src="/lucide-logo-light.svg"
 										alt="Lucide.dev logo"
-										class="max-h-20 flex dark:hidden"
+										class="max-h-16 flex dark:hidden"
 									/>
 								</CardContent>
 								<CardFooter> https://lucide.dev/ </CardFooter>
