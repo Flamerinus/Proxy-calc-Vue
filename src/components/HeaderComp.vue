@@ -62,7 +62,7 @@ import Separator from './ui/separator/Separator.vue';
 
   <Sheet>
     <SheetTrigger class="sm:hidden ml-2">
-      <Menu stroke-width="1" />
+      <Menu stroke-width="2" />
     </SheetTrigger>
     <SheetContent side="left" class="sm:hidden px-0 w-3/5">
       <SheetHeader class="flex-col mt-6 gap-1">
