@@ -1,6 +1,6 @@
 ---
 # If MB is 1, data rates will be treated as they are, meagbytes per seconds, for all calculations. If you set it to 8, it means the data is in megabits per second, and it will be divided by 8 in the selector.
-title: Avid DNxHR® 
+title: Avid DNxHR™ 
 name: DNxHR
 bitrate: constant
 MB: 1

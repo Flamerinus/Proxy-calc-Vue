@@ -3,8 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import { Button } from "@/components/ui/button";
 import { getCollection } from "astro:content";
-import { Home } from 'lucide-vue-next';
-
+import { Home } from "lucide-vue-next";
 
 import {
 	Breadcrumb,
@@ -25,24 +24,34 @@ const docs = await getCollection("docs");
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink >
+						<BreadcrumbLink>
 							<a href="/">
-							<Home size={20} stroke-width={1.5}/>
+								<Home size={20} stroke-width={1.5} />
 							</a>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbPage>Documentation</BreadcrumbPage>
+						</BreadcrumbLink>
+						<BreadcrumbSeparator />
+						<BreadcrumbItem>
+							<BreadcrumbPage>Documentation</BreadcrumbPage>
+						</BreadcrumbItem>
 					</BreadcrumbItem>
 				</BreadcrumbList>
 			</Breadcrumb>
 		</div>
-		<div>
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-4"
+		>
 			{
 				docs.map((doc) => (
-					<a href={`/docs/${doc.slug}`}>
-						<Button>{doc.data.title}</Button>
-					</a>
+					<div class="w-full">
+						<a href={`/codeclist/${doc.slug}`}>
+							<Button
+								variant="outline"
+								class="h-fit w-full flex-col items-center min-w-80 sm:min-w-0"
+							>
+								<span class="text-lg">{doc.data.title}</span>
+							</Button>
+						</a>
+					</div>
 				))
 			}
 		</div>
