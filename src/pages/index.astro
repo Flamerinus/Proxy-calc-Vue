@@ -1,21 +1,26 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import '@/styles/globals.css';
-import { getCollection } from "astro:content";
-
-const codecs = await getCollection("codecs");
-//console.log(codecs);
-
+import { Button } from "@/components/ui/button";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
 ---
-
 
 <Layout title={"Proxycalc"}>
 	<main>
-		Welcome to Proxycalc!
+		<div class="my-4">
+			<div class="sm:text-center">
+				<p class="text-center text-3xl sm:text-5xl font-bold mb-4">
+					Welcome to Proxycalc!
+				</p>
 
-		Calculate the approximate size of your footage in storage.
-
-		Learn about key concepts in the video encoding world.
+				<p class="sm:text-center text-lg sm:text-xl">
+					Calculate the approximate size of your footage in storage.
+				</p>
+				<Button class="my-4 text-base">Take a look at the codec list</Button>
+				<p class="sm:text-center text-lg sm:text-xl">
+					Learn about key concepts and terms in the video encoding world.
+				</p>
+				<Button class="my-4 text-base">Check the documentation</Button>
+			</div>
+		</div>
 	</main>
 </Layout>
-
