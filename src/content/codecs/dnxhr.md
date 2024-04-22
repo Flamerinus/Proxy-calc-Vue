@@ -438,3 +438,5 @@ Resolutions:
           Bits: "10/12"
           Chroma: "4:4:4"
 ---
+
+Test 1 dnxhr
