@@ -38,7 +38,7 @@ const docs = await getCollection("docs");
 			</Breadcrumb>
 		</div>
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-4"
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 my-4"
 		>
 			{
 				docs.map((doc) => (
@@ -46,7 +46,7 @@ const docs = await getCollection("docs");
 						<a href={`/docs/${doc.slug}`}>
 							<Button
 								variant="outline"
-								class="h-fit w-full flex-col items-center min-w-80 sm:min-w-0"
+								class="w-full flex-col items-center min-w-80 sm:min-w-0"
 							>
 								<span class="text-lg">{doc.data.title}</span>
 							</Button>

@@ -21,7 +21,7 @@ import {
 
 import Selector from "@/components/Selector.vue";
 
-import { Home } from 'lucide-vue-next';
+import { Home } from "lucide-vue-next";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 
@@ -45,6 +45,7 @@ type Props = {
 };
 
 const { codec } = Astro.props;
+const { Content } = await codec.render();
 
 //console.dir(codec, { depth: null });
 ---
@@ -55,9 +56,9 @@ const { codec } = Astro.props;
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink >
+            <BreadcrumbLink>
               <a href="/">
-              <Home size={20} stroke-width={1.5}/>
+                <Home size={20} stroke-width={1.5} />
               </a>
             </BreadcrumbLink>
           </BreadcrumbItem>
@@ -86,13 +87,10 @@ const { codec } = Astro.props;
         <CardContent>
           <Selector resolvalues={codec} client:load />
         </CardContent>
-        <CardFooter>
-          <p>ProxyCalc</p>
-        </CardFooter>
       </Card>
     </div>
     <div class="my-4">
-      {codec.body}
+      <Content />
     </div>
   </main>
 </Layout>

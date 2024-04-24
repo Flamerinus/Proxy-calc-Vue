@@ -10,7 +10,7 @@ import {
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Label } from '@/components/ui/label'
 import { computed, ref, watch } from 'vue'
-
+import { Skeleton } from '@/components/ui/skeleton'
 import Button from './ui/button/Button.vue';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -148,11 +148,12 @@ function copytext() {
   </div>
 
   <div class="mx-auto my-1">
-    <Select v-if="selectedResolution" name="codec-selector" v-model="selectedCodec">
+    <Select name="codec-selector" v-model="selectedCodec">
       <Label for="codec">Codec</Label>
-      <SelectTrigger>
+      <SelectTrigger v-if="selectedResolution">
         <SelectValue placeholder="Please select codec" />
       </SelectTrigger>
+      <Skeleton v-else class="h-10" />
       <SelectContent>
         <SelectGroup>
 
@@ -166,11 +167,12 @@ function copytext() {
   </div>
 
   <div class="mx-auto my-1">
-    <Select v-if="selectedCodec" name="fps-selector" v-model="selectedFps">
+    <Select name="fps-selector" v-model="selectedFps">
       <Label for="framerate">Frame rate</Label>
-      <SelectTrigger>
+      <SelectTrigger v-if="selectedCodec">
         <SelectValue placeholder="Please select frame rate" />
       </SelectTrigger>
+      <Skeleton v-else class="h-10" />
       <SelectContent>
         <SelectGroup>
           <SelectItem v-for="fps in fpsOptions" :key="fps" :value="fps">
@@ -181,8 +183,8 @@ function copytext() {
     </Select>
   </div>
 
-  <div v-if="selectedFps" class="my-2 flex justify-around gap-1">
-    <TooltipProvider>
+  <div class="my-2 flex justify-around gap-1">
+    <TooltipProvider v-if="selectedFps">
       <Tooltip>
         <TooltipTrigger class="flex flex-auto justify-center">
           <Badge class="flex-auto justify-center" variant="secondary"> {{ bitRate }} MB/s</Badge>
@@ -192,9 +194,10 @@ function copytext() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-    <TooltipProvider>
+    <Skeleton v-else class="flex-auto h-[22px] rounded-full" />
+    <TooltipProvider v-if="selectedFps">
       <Tooltip>
-        <TooltipTrigger class="flex flex-auto justify-center">
+        <TooltipTrigger v-if="selectedFps" class="flex flex-auto justify-center">
           <Badge class=" flex-auto justify-center" variant="secondary"> {{ chroma }} </Badge>
         </TooltipTrigger>
         <TooltipContent>
@@ -202,9 +205,10 @@ function copytext() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-    <TooltipProvider>
+    <Skeleton v-else class="flex-auto h-[22px] rounded-full" />
+    <TooltipProvider v-if="selectedFps">
       <Tooltip>
-        <TooltipTrigger class="flex flex-auto justify-center">
+        <TooltipTrigger v-if="selectedFps" class="flex flex-auto justify-center">
           <Badge class=" flex-auto justify-center" variant="secondary"> {{ bitDepth }} bits</Badge>
         </TooltipTrigger>
         <TooltipContent>
@@ -212,14 +216,16 @@ function copytext() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
+    <Skeleton v-else class="flex-auto h-[22px] rounded-full" />
   </div>
 
   <div class="mx-auto my-1">
-    <Select v-if="selectedFps" name="time-selector" v-model="selectedDuration">
+    <Select name="time-selector" v-model="selectedDuration">
       <Label for="duration">Duration</Label>
-      <SelectTrigger>
+      <SelectTrigger v-if="selectedFps">
         <SelectValue placeholder="Please select clip duration" />
       </SelectTrigger>
+      <Skeleton v-else class="h-10" />
       <SelectContent>
         <SelectGroup>
           <SelectItem v-for="(value, label) in durations" :value="String(label)">
@@ -231,10 +237,10 @@ function copytext() {
   </div>
 
   <div class="my-2 flex justify-around">
-    <TooltipProvider>
+    <TooltipProvider v-if="selectedDuration && selectedFps">
       <Tooltip>
         <TooltipTrigger class="flex flex-auto justify-center">
-          <Badge v-if="selectedDuration && selectedFps" class="flex-1 justify-center" variant="secondary">File size: {{
+          <Badge class="flex-1 justify-center" variant="secondary">File size: {{
             formattedFileSize
           }}</Badge>
         </TooltipTrigger>
@@ -243,11 +249,13 @@ function copytext() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
+    <Skeleton v-else class="flex-auto h-[22px] rounded-full" />
+
   </div>
 
-  <div v-if="selectedDuration && selectedFps" class="grid w-full">
+  <div  class="grid w-full">
     <Label for="description">Info</Label>
-    <Alert>
+    <Alert v-if="selectedDuration && selectedFps">
       <AlertDescription>
         <span id="info">
           {{ selectedDuration }} of video footage in {{ selectedResolution }} -> {{ resolutionsWithResValue.find(item =>
@@ -258,7 +266,10 @@ function copytext() {
         </span>
       </AlertDescription>
     </Alert>
-    <Button @click="copytext" class="my-1" variant="outline">Copy text</Button>
+    <Skeleton v-else class="h-24" />
+    <Button v-if="selectedDuration && selectedFps" @click="copytext" class="my-1" variant="outline">Copy text</Button>
+    <Skeleton v-else class="h-10 my-1" />
+
   </div>
 
 </template>
