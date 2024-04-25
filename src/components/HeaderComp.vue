@@ -23,8 +23,6 @@ import {
 } from '@/components/ui/sheet'
 
 import { Button } from '@/components/ui/button'
-import Separator from './ui/separator/Separator.vue';
-
 </script>
 
 <template>
@@ -65,7 +63,7 @@ import Separator from './ui/separator/Separator.vue';
       <Menu stroke-width="2" />
     </SheetTrigger>
     <SheetContent side="left" class="sm:hidden px-0 w-3/5">
-      <SheetHeader class="flex-col mt-6 gap-1">
+      <SheetHeader class="flex-col mt-6 gap-2">
         <NavigationMenuLink class="flex" href="/docs">
           <Button class="text-base flex-auto  gap-2 justify-start" variant="ghost">
             <Files :size=24 :stroke-width=2 />
