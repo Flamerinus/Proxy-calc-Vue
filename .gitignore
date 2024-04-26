@@ -24,13 +24,7 @@ pnpm-debug.log*
 src/components/ui/breadcrumb/index.ts
 src/components/ui/button/Button.vue
 src/components/ui/button/index.ts
-src/components/ui/card/Card.vue
-src/components/ui/card/CardContent.vue
-src/components/ui/card/CardDescription.vue
-src/components/ui/card/CardFooter.vue
-src/components/ui/card/CardHeader.vue
-src/components/ui/card/CardTitle.vue
-src/components/ui/card/index.ts
+
 src/components/ui/dropdown-menu/DropdownMenu.vue
 src/components/ui/dropdown-menu/DropdownMenuCheckboxItem.vue
 src/components/ui/dropdown-menu/DropdownMenuContent.vue
@@ -102,15 +96,7 @@ src/components/ui/navigation-menu/NavigationMenuLink.vue
 src/components/ui/navigation-menu/NavigationMenuList.vue
 src/components/ui/navigation-menu/NavigationMenuTrigger.vue
 src/components/ui/navigation-menu/NavigationMenuViewport.vue
-src/components/ui/sheet/index.ts
-src/components/ui/sheet/Sheet.vue
-src/components/ui/sheet/SheetClose.vue
 
-src/components/ui/sheet/SheetDescription.vue
-src/components/ui/sheet/SheetFooter.vue
-src/components/ui/sheet/SheetHeader.vue
-src/components/ui/sheet/SheetTitle.vue
-src/components/ui/sheet/SheetTrigger.vue
 src/components/ui/separator/index.ts
 src/components/ui/separator/Separator.vue
 src/components/ui/progress/index.ts
