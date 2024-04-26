@@ -47,7 +47,7 @@ type Props = {
 const { codec } = Astro.props;
 const { Content } = await codec.render();
 
-//console.dir(codec, { depth: null });
+//console.dir(codec.data.Resolutions, {depth: null, colors: true});
 ---
 
 <Layout title={"Proxy Calc > " + codec.data.title}>
