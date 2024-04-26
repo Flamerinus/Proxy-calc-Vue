@@ -67,6 +67,7 @@ watch(selectedResolution, () => {
   if (!codecOptions.value.includes(selectedCodec.value)) {
     selectedCodec.value = "";
     selectedFps.value = "";
+    selectedDuration.value = "";
   }
 
   if (selectedCodec.value) {
@@ -74,6 +75,7 @@ watch(selectedResolution, () => {
     fpsOptions.value = Object.keys(fps);
     if (!fpsOptions.value.includes(selectedFps.value)) {
       selectedFps.value = "";
+      selectedDuration.value = "";
     }
   }
   calculate();
@@ -85,6 +87,7 @@ watch(selectedCodec, () => {
     fpsOptions.value = Object.keys(fps);
     if (!fpsOptions.value.includes(selectedFps.value)) {
       selectedFps.value = "";
+      selectedDuration.value= "";
     }
   }
   calculate();
@@ -221,7 +224,7 @@ function copytext() {
 
   <div class="mx-auto my-1">
     <Select name="time-selector" v-model="selectedDuration">
-      <Label for="duration">Duration</Label>
+      <Label for="duration">Duration {{ selectedDuration }}</Label>
       <SelectTrigger v-if="selectedFps">
         <SelectValue placeholder="Please select clip duration" />
       </SelectTrigger>
@@ -253,7 +256,7 @@ function copytext() {
 
   </div>
 
-  <div  class="grid w-full">
+  <div class="grid w-full">
     <Label for="description">Info</Label>
     <Alert v-if="selectedDuration && selectedFps">
       <AlertDescription>
