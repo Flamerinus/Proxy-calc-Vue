@@ -11,4 +11,5 @@ export default defineConfig({
     applyBaseStyles: false
   }), mdx(), sitemap()],
   site: 'https://flamerinus.github.io',
+  base: 'Proxy-calc-Vue',
 });
