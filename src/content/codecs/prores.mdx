@@ -1525,6 +1525,15 @@ Resolutions:
           Chroma: "4:4:4"
 ---
 import { Badge } from '@/components/ui/badge'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  } from '@/components/ui/table'
 
 **Apple ProRes** is one of the most popular <span class="underline">[codecs](/docs/codec "codec")</span> in professional 
 post‑production. It allows working with full‑frame, 10 and 12 bit <span class="underline">[color depth](/docs/colordepth "color depth")</span>, 4:2:2 and 4:4:4:4 <span class="underline">[chroma sublsampling](/docs/chroma "chroma subsampling")</span>,
@@ -1536,6 +1545,11 @@ on <span class="underline">[codec](/docs/codec "codec")</span> type, image conte
 \
 As a variable bit rate (<span class="underline">[VBR](/docs/bitrate "Variable bit rate")</span>) codec technology, ProRes uses fewer bits on 
 simple frames that would not benefit from encoding at a higher data rate.\
+Although ProRes is a VBR codec, the variability is usually small. The
+actual data rate is usually close to the target data rate. For a given
+ProRes format, there is also a maximum number of bits per frame that is
+never exceeded. This maximum is approximately 10 percent more than
+the target number of bits per frame.\
 \
 All ProRes codecs are <span class="underline">[frame‑independent](/docs/all-intra "frame independent")</span> (or “intra‑frame”) codecs, 
 meaning that each frame is encoded and decoded independently of any 
@@ -1588,9 +1602,63 @@ where storage capacity and data rate are at a premium.\
 An even more highly compressed codec 
 than Apple ProRes 422 LT, intended for use in offline workflows that 
 require low data rates but full‑resolution video.
+<Table class="w-full sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-3/5">
+    <TableCaption>ProRes Key</TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead>Bit Depth</TableHead>
+        <TableHead>Chroma subsampling</TableHead>
+        <TableHead>Compression Ratio</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>ProRes 4444 XQ</TableCell>
+        <TableCell>10/12</TableCell>
+        <TableCell>RGB/4:4:4</TableCell>
+        <TableCell>4.5:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>ProRes 4444</TableCell>
+        <TableCell>10/12</TableCell>
+        <TableCell>4:4:4</TableCell>
+        <TableCell>6.8:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>ProRes 422 HQ</TableCell>
+        <TableCell>10</TableCell>
+        <TableCell>4:2:2</TableCell>
+        <TableCell>6:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>ProRes 422</TableCell>
+        <TableCell>10</TableCell>
+        <TableCell>4:2:2</TableCell>
+        <TableCell>9:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>ProRes 422 LT</TableCell>
+        <TableCell>10</TableCell>
+        <TableCell>4:2:2</TableCell>
+        <TableCell>13:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>ProRes 422 Proxy</TableCell>
+        <TableCell>10</TableCell>
+        <TableCell>4:2:2</TableCell>
+        <TableCell>29.5:1</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableHead colspan="4" class="text-center">
+          Data extrapolated from Apple documentation.
+        </TableHead>
+      </TableRow>
+    </TableBody>
+  </Table> 
 <br>
 </br>
-*****************
+***
 *Note: ProRes 4444 XQ and ProRes 4444 are ideal for the 
 exchange of motion graphics media because they are virtually lossless, 
 and are the only ProRes codecs that support alpha channels.*
