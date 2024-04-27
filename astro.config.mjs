@@ -9,5 +9,6 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   integrations: [vue(), tailwind({
     applyBaseStyles: false
-  }), mdx(), sitemap()]
+  }), mdx(), sitemap()],
+  site: 'https://flamerinus.github.io',
 });
