@@ -10,6 +10,6 @@ export default defineConfig({
   integrations: [vue(), tailwind({
     applyBaseStyles: false
   }), mdx(), sitemap()],
-  site: 'https://flamerinus.github.io/Proxy-calc-Vue',
-  
+  site: 'https://flamerinus.github.io',
+  base: '/Proxycalc',
 });

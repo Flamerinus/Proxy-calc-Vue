@@ -3,6 +3,8 @@ import ModeToggle from "./ModeToggle.vue";
 import HeaderComp from "./HeaderComp.vue";
 import { Separator } from "@/components/ui/separator";
 import { FileVideo } from "lucide-vue-next";
+const Base = import.meta.env.BASE_URL;
+
 // header-height variable defined in globals.css
 ---
 
@@ -12,11 +14,11 @@ import { FileVideo } from "lucide-vue-next";
     >
         <HeaderComp client:load />
         <div class="flex sm:order-first sm:mr-auto ml-2 self-center">
-            <a href="/">
+            <a href=`${Base}/`>
                 <FileVideo size={32} stroke-width={1} />
             </a>
             <span class="flex items-center text-xl ">
-                <a href="/">Proxycalc</a>
+                <a href=`${Base}/`>Proxycalc</a>
             </span>
         </div>
         <ModeToggle client:load />
