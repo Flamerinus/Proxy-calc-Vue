@@ -1,5 +1,6 @@
 ---
 import { FileVideo } from "lucide-vue-next";
+const Base = import.meta.env.BASE_URL; 
 ---
 
 <footer>
@@ -7,14 +8,14 @@ import { FileVideo } from "lucide-vue-next";
         class="font-mono text-sm text-muted-foreground mx-auto w-full flex flex-wrap my-2 items-center gap-2 sm:gap-4 justify-center bottom-0 inset-x-0"
     >
         <div class="flex items-center">
-            <a href="/"><FileVideo size={24} stroke-width={1} /></a>
-            <a href="/">Proxycalc</a>
+            <a href=`${Base}/`><FileVideo size={24} stroke-width={1} /></a>
+            <a href=`${Base}/`>Proxycalc</a>
         </div>
         <p>|</p>
-        <a href="/docs">Docs</a>
+        <a href=`${Base}/docs`>Docs</a>
         <p>|</p>
-        <a href="/codeclist">Codec list</a>
+        <a href=`${Base}/codeclist`>Codec list</a>
         <p>|</p>
-        <a href="/about">About</a>
+        <a href=`${Base}/about`>About</a>
     </div>
 </footer>

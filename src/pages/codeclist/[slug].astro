@@ -46,6 +46,7 @@ type Props = {
 
 const { codec } = Astro.props;
 const { Content } = await codec.render();
+const Base = import.meta.env.BASE_URL;
 
 //console.dir(codec.data.Resolutions, {depth: null, colors: true});
 ---
@@ -57,7 +58,7 @@ const { Content } = await codec.render();
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <a href="/">
+              <a href=`${Base}/`>
                 <Home size={20} stroke-width={1.5} />
               </a>
             </BreadcrumbLink>
@@ -65,7 +66,7 @@ const { Content } = await codec.render();
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <a href="/codeclist">Codec list</a>
+              <a href=`${Base}/codeclist`>Codec list</a>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />

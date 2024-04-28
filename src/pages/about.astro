@@ -21,6 +21,7 @@ import {
 import { Home, ArrowDown } from "lucide-vue-next";
 import { Image } from "astro:assets";
 import myFace from "../images/faceavatarv2.png";
+const Base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={"Proxy Calc > About"}>
@@ -30,7 +31,7 @@ import myFace from "../images/faceavatarv2.png";
 				<BreadcrumbList>
 					<BreadcrumbItem>
 						<BreadcrumbLink>
-							<a href="/">
+							<a href=`${Base}/`>
 								<Home size={20} stroke-width={1.5} />
 							</a>
 						</BreadcrumbLink>
@@ -54,17 +55,26 @@ import myFace from "../images/faceavatarv2.png";
 						<CardHeader
 							class="flex flex-row items-center justify-between p-1"
 						>
-						<div class="flex items-center flex-grow justify-between">
-							<Image
-								src={myFace}
-								alt={"Flamerinus face"}
-								class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
-							/>
-							<CardDescription>Code by <span class="text-foreground">Alex. J.</span></CardDescription>
-						</div>
-							<div class="flex items-center flex-grow justify-center">
-							<CardDescription>Tools used:</CardDescription>
-							<ArrowDown size={16} stroke-width={2} /></div>
+							<div
+								class="flex items-center flex-grow justify-between"
+							>
+								<Image
+									src={myFace}
+									alt={"Flamerinus face"}
+									class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
+								/>
+								<CardDescription
+									>Code by <span class="text-foreground"
+										>Alex. J.</span
+									></CardDescription
+								>
+							</div>
+							<div
+								class="flex items-center flex-grow justify-center"
+							>
+								<CardDescription>Tools used:</CardDescription>
+								<ArrowDown size={16} stroke-width={2} />
+							</div>
 						</CardHeader>
 					</a>
 				</Card>
@@ -90,13 +100,13 @@ import myFace from "../images/faceavatarv2.png";
 									class="flex justify-center items-center flex-grow"
 								>
 									<img
-										src="/astro-logo-light.svg"
+										src=`${Base}/astro-logo-light.svg`
 										alt="Astro logo"
 										class="max-h-16 hidden dark:flex"
 									/>
 
 									<img
-										src="/astro-logo-dark.svg"
+										src=`${Base}/astro-logo-dark.svg`
 										alt="Astro logo"
 										class="max-h-16 flex dark:hidden"
 									/>
@@ -124,7 +134,7 @@ import myFace from "../images/faceavatarv2.png";
 									class="flex justify-center items-center flex-grow"
 								>
 									<img
-										src="/vue-logo.svg"
+										src=`${Base}/vue-logo.svg`
 										alt="Vue.js logo"
 										class="max-h-16"
 									/>
@@ -152,7 +162,7 @@ import myFace from "../images/faceavatarv2.png";
 									class="flex justify-center items-center flex-grow"
 								>
 									<img
-										src="/shadcn-vue-logo-black.svg"
+										src=`${Base}/shadcn-vue-logo-black.svg`
 										alt="Shadcn-vue logo"
 										class="max-h-16"
 									/>
@@ -182,7 +192,7 @@ import myFace from "../images/faceavatarv2.png";
 									class="flex justify-center items-center flex-grow"
 								>
 									<img
-										src="/tailwindcss-logo.svg"
+										src=`${Base}/tailwindcss-logo.svg`
 										alt="Tailwind css logo"
 										class="max-h-16"
 									/>
@@ -212,13 +222,13 @@ import myFace from "../images/faceavatarv2.png";
 									class="flex justify-center items-center flex-grow"
 								>
 									<img
-										src="/lucide-logo-dark.svg"
+										src=`${Base}/lucide-logo-dark.svg`
 										alt="Lucide.dev logo"
 										class="max-h-16 hidden dark:flex"
 									/>
 
 									<img
-										src="/lucide-logo-light.svg"
+										src=`${Base}/lucide-logo-light.svg`
 										alt="Lucide.dev logo"
 										class="max-h-16 flex dark:hidden"
 									/>
