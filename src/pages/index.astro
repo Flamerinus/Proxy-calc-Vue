@@ -1,5 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 const Base = import.meta.env.BASE_URL;
@@ -7,23 +8,26 @@ const Base = import.meta.env.BASE_URL;
 
 <Layout title={"Proxycalc"}>
 	<main>
-		<div class="my-4">
+		<div class="my-4 sm:max-w-3xl mx-auto">
 			<div class="sm:text-center">
 				<p class="text-center text-3xl sm:text-5xl font-bold mb-4">
 					Welcome to Proxycalc!
 				</p>
-
-				<p class="sm:text-center text-lg sm:text-xl">
-					Calculate the approximate size of your files on disk.
+				<Separator />
+				<p class="sm:text-center text-base sm:text-lg">
+					Calculate the approximate size of your files on disk.<br />
+					Useful for HDD, SSD, external recorders and other purchases.
 				</p>
 				<a href=`${Base}/codeclist`>
 					<Button class="my-4 text-base"
 						>Take a look at the codec list</Button
 					>
 				</a>
-				<p class="sm:text-center text-lg sm:text-xl">
+				<Separator />
+				<p class="sm:text-center text-base sm:text-lg">
 					Learn about key concepts and terms in the video encoding
-					world.
+					world.<br />
+					Become a better professional or simply improve your general knowledge.
 				</p>
 				<a href=`${Base}/docs`>
 					<Button class="my-4 text-base"
