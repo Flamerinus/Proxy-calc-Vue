@@ -5,12 +5,14 @@
 @layer base {
 
   .link {
-    color: hsl(var(--muted-foreground));
+    
+    text-decoration-line: underline;
+
   }
 
   .link:hover {
-    text-decoration-line: underline;
-    color: hsl(var(--primary));
+    background-color: hsl(var(--secondary));
+    text-decoration-line: none;
   }
 
   :root {
