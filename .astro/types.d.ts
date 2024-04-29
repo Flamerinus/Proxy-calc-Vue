@@ -201,6 +201,13 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
+"editperf.md": {
+	id: "editperf.md";
+  slug: "editperf";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
 "fps.md": {
 	id: "fps.md";
   slug: "fps";
