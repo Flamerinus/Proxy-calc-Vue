@@ -270,7 +270,7 @@ function copytext() {
       </AlertDescription>
     </Alert>
     <Skeleton v-else class="h-24" />
-    <Button v-if="selectedDuration && selectedFps" @click="copytext" class="my-1" variant="outline">Copy text</Button>
+    <Button v-if="selectedDuration && selectedFps" @click="copytext" class="my-1" variant="secondary">Copy text</Button>
     <Skeleton v-else class="h-10 my-1" />
 
   </div>
