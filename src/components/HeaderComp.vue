@@ -33,7 +33,7 @@ const Base = import.meta.env.BASE_URL;
       <NavigationMenuItem>
         <NavigationMenuLink :href="`${Base}/docs`">
           <Button class="text-base px-2" variant="ghost">
-            <Files :size=24 :stroke-width=2 />
+            <Files :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             Documentation
           </Button>
         </NavigationMenuLink>
@@ -42,7 +42,7 @@ const Base = import.meta.env.BASE_URL;
       <NavigationMenuItem>
         <NavigationMenuLink :href="`${Base}/codeclist`">
           <Button class="text-base px-2" variant="ghost">
-            <ListVideo :size=24 :stroke-width=2 />
+            <ListVideo :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             Codec list
           </Button>
         </NavigationMenuLink>
@@ -51,7 +51,7 @@ const Base = import.meta.env.BASE_URL;
       <NavigationMenuItem>
         <NavigationMenuLink :href="`${Base}/about`">
           <Button class="text-base px-2" variant="ghost">
-            <FileQuestion :size=24 :stroke-width=2 />
+            <FileQuestion :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             About
           </Button>
         </NavigationMenuLink>
@@ -67,19 +67,19 @@ const Base = import.meta.env.BASE_URL;
       <SheetHeader class="flex-col mt-6 gap-2">
         <NavigationMenuLink class="flex" :href="`${Base}/docs`">
           <Button class="text-base flex-auto  gap-2 justify-start" variant="ghost">
-            <Files :size=24 :stroke-width=2 />
+            <Files :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             Documentation
           </Button>
         </NavigationMenuLink>
         <NavigationMenuLink class="flex" :href="`${Base}/codeclist`">
           <Button class="text-base flex-auto  gap-2 justify-start" variant="ghost">
-            <ListVideo :size=24 :stroke-width=2 />
+            <ListVideo :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             Codec list
           </Button>
         </NavigationMenuLink>
         <NavigationMenuLink class="flex" :href="`${Base}/about`">
           <Button class="text-base flex-auto  gap-2 justify-start" variant="ghost">
-            <FileQuestion :size=24 :stroke-width=2 />
+            <FileQuestion :size=24 :stroke-width=2 class="stroke-muted-foreground" />
             About
           </Button>
         </NavigationMenuLink>
