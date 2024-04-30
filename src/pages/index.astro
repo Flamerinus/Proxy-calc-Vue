@@ -9,29 +9,29 @@ const Base = import.meta.env.BASE_URL;
 <Layout title={"Proxycalc"}>
 	<main>
 		<div class="my-4 sm:max-w-3xl mx-auto">
-			<div class="sm:text-center">
+			<div class="text-center">
 				<p class="text-center text-3xl sm:text-5xl font-bold mb-4">
 					Welcome to Proxycalc!
 				</p>
 				<Separator />
-				<p class="sm:text-center text-base sm:text-lg">
-					Calculate the approximate size of your files on disk.<br />
+				<p class="text-left sm:text-center text-base sm:text-lg">
+					Calculate the approximate size of your video files on disk.<br />
 					Useful for project planning and purchasing HDDs, SSDs, cameras
-					or external recorders.
+					or external recorders. 
 				</p>
 				<a href=`${Base}/codeclist`>
-					<Button class="my-4 text-base"
+					<Button variant="secondary" class="my-4 text-base"
 						>Select your codec</Button
 					>
 				</a>
 				<Separator />
-				<p class="sm:text-center text-base sm:text-lg">
+				<p class="text-left sm:text-center text-base sm:text-lg">
 					Learn about key concepts and terms in the video encoding
 					world.<br />
 					Become a better professional or simply widen your general knowledge.
 				</p>
 				<a href=`${Base}/docs`>
-					<Button class="my-4 text-base"
+					<Button variant="secondary" class="my-4 text-base"
 						>Check the documentation</Button
 					>
 				</a>
