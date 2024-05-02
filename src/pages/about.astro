@@ -18,10 +18,51 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Home, ArrowDown } from "lucide-vue-next";
+import { Home, ArrowDown, Import } from "lucide-vue-next";
 import { Image } from "astro:assets";
+import Populator from "@/components/Populator.vue";
 import myFace from "../images/faceavatarv2.png";
 const Base = import.meta.env.BASE_URL;
+
+const Cardlist = [
+	{
+		title: "Astro",
+		description: "The web framework for content-driven websites.",
+		imgdark: "astro-logo-light.svg",
+		imglight: "astro-logo-dark.svg",
+		url: "https://astro.build/",
+	},
+	{
+		title: "Vue.js",
+		description: "The Progressive JavaScript Framework.",
+		imgdark: "vue-logo.svg",
+		imglight: "vue-logo.svg",
+		url: "https://vuejs.org/",
+	},
+	{
+		title: "Shadcn-vue",
+		description:
+			"Re-usable components built with Radix Vue, and Tailwind CSS.",
+		imgdark: "shadcn-vue-logo-black.svg",
+		imglight: "shadcn-vue-logo-black.svg",
+		url: "https://shadcn-vue.com/",
+	},
+	{
+		title: "Tailwindcss",
+		description:
+			"Rapidly build modern websites without ever leaving your HTML.",
+		imgdark: "tailwindcss-logo.svg",
+		imglight: "tailwindcss-logo.svg",
+		url: "https://tailwindcss.com/",
+	},
+	{
+		title: "Lucide",
+		description: "Beautiful & consistent icons Made by the community.",
+		imgdark: "lucide-logo-dark.svg",
+		imglight: "lucide-logo-light.svg",
+		url: "https://lucide.dev/",
+	},
+];
 ---
 
 <Layout title={"Proxy Calc > About"}>
@@ -78,166 +119,7 @@ const Base = import.meta.env.BASE_URL;
 						</CardHeader>
 					</a>
 				</Card>
-				<div
-					class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-4"
-				>
-					<div class="flex flex-col">
-						<Card class="flex-grow">
-							<a
-								href="https://astro.build/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex flex-col h-full"
-							>
-								<CardHeader>
-									<CardTitle>Astro</CardTitle>
-									<CardDescription
-										>The web framework for content-driven
-										websites.</CardDescription
-									>
-								</CardHeader>
-								<CardContent
-									class="flex justify-center items-center flex-grow"
-								>
-									<img
-										src=`${Base}/astro-logo-light.svg`
-										alt="Astro logo"
-										class="max-h-16 hidden dark:flex"
-									/>
-
-									<img
-										src=`${Base}/astro-logo-dark.svg`
-										alt="Astro logo"
-										class="max-h-16 flex dark:hidden"
-									/>
-								</CardContent>
-								<CardFooter> https://astro.build/ </CardFooter>
-							</a>
-						</Card>
-					</div>
-
-					<div class="flex flex-col">
-						<Card class="flex-grow">
-							<a
-								href="https://vuejs.org/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex flex-col h-full"
-							>
-								<CardHeader>
-									<CardTitle>Vue.js</CardTitle>
-									<CardDescription
-										>The Progressive JavaScript Framework.</CardDescription
-									>
-								</CardHeader>
-								<CardContent
-									class="flex justify-center items-center flex-grow"
-								>
-									<img
-										src=`${Base}/vue-logo.svg`
-										alt="Vue.js logo"
-										class="max-h-16"
-									/>
-								</CardContent>
-								<CardFooter> https://vuejs.org/ </CardFooter>
-							</a>
-						</Card>
-					</div>
-					<div class="flex flex-col">
-						<Card class="flex-grow">
-							<a
-								href="https://www.shadcn-vue.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex flex-col h-full"
-							>
-								<CardHeader>
-									<CardTitle>Shadcn-vue</CardTitle>
-									<CardDescription
-										>Re-usable components built with Radix
-										Vue, and Tailwind CSS.</CardDescription
-									>
-								</CardHeader>
-								<CardContent
-									class="flex justify-center items-center flex-grow"
-								>
-									<img
-										src=`${Base}/shadcn-vue-logo-black.svg`
-										alt="Shadcn-vue logo"
-										class="max-h-16"
-									/>
-								</CardContent>
-								<CardFooter>
-									https://shadcn-vue.com/
-								</CardFooter>
-							</a>
-						</Card>
-					</div>
-					<div class="flex flex-col">
-						<Card class="flex-grow">
-							<a
-								href="https://tailwindcss.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex flex-col h-full"
-							>
-								<CardHeader>
-									<CardTitle>Tailwindcss</CardTitle>
-									<CardDescription
-										>Rapidly build modern websites without
-										ever leaving your HTML.</CardDescription
-									>
-								</CardHeader>
-								<CardContent
-									class="flex justify-center items-center flex-grow"
-								>
-									<img
-										src=`${Base}/tailwindcss-logo.svg`
-										alt="Tailwind css logo"
-										class="max-h-16"
-									/>
-								</CardContent>
-								<CardFooter>
-									https://tailwindcss.com/
-								</CardFooter>
-							</a>
-						</Card>
-					</div>
-					<div class="flex flex-col">
-						<Card class="flex-grow">
-							<a
-								href="https://lucide.dev/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex flex-col h-full"
-							>
-								<CardHeader>
-									<CardTitle>Lucide</CardTitle>
-									<CardDescription
-										>Beautiful & consistent icons Made by
-										the community.</CardDescription
-									>
-								</CardHeader>
-								<CardContent
-									class="flex justify-center items-center flex-grow"
-								>
-									<img
-										src=`${Base}/lucide-logo-dark.svg`
-										alt="Lucide.dev logo"
-										class="max-h-16 hidden dark:flex"
-									/>
-
-									<img
-										src=`${Base}/lucide-logo-light.svg`
-										alt="Lucide.dev logo"
-										class="max-h-16 flex dark:hidden"
-									/>
-								</CardContent>
-								<CardFooter> https://lucide.dev/ </CardFooter>
-							</a>
-						</Card>
-					</div>
-				</div>
+				<Populator Cards={Cardlist} client:load />
 			</div>
 		</div>
 	</main>
