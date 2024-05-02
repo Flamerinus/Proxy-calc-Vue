@@ -20,11 +20,10 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card'
+import { useToast } from '@/components/ui/toast/use-toast'
+import { Toaster } from '@/components/ui/toast'
+
+const { toast } = useToast()
 
 const props = defineProps<{
   resolvalues: any;
@@ -87,7 +86,7 @@ watch(selectedCodec, () => {
     fpsOptions.value = Object.keys(fps);
     if (!fpsOptions.value.includes(selectedFps.value)) {
       selectedFps.value = "";
-      selectedDuration.value= "";
+      selectedDuration.value = "";
     }
   }
   calculate();
@@ -130,10 +129,15 @@ const formattedFileSize = computed(() => {
 function copytext() {
   const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
   navigator.clipboard.writeText(infoText);
+  toast({
+    description: 'Copied to clipboard.',
+    duration: 1500,
+  });
 }
 
 </script>
 <template>
+  <Toaster />
   <div class="mx-auto my-1">
     <Select name="resolution-selector" v-model="selectedResolution">
       <Label for="resolution">Resolution</Label>
