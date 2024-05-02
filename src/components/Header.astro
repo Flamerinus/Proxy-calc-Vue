@@ -10,10 +10,10 @@ const Base = import.meta.env.BASE_URL;
 
 <header>
     <div
-        class="h-[var(--header-height)] mx-auto w-full max-w-screen-2xl bg-background flex justify-between sm:justify-end fixed inset-x-0 z-40 opacity-95"
+        class="items-center h-[var(--header-height)] mx-auto w-full max-w-screen-2xl bg-background flex justify-between sm:justify-end fixed inset-x-0 z-40 opacity-95"
     >
         <HeaderComp client:load />
-        <div class="flex sm:order-first sm:mr-auto ml-2 self-center">
+        <div class="flex sm:order-first sm:mr-auto ml-2">
             <a href=`${Base}/`>
                 <FileVideo size={32} stroke-width={1} />
             </a>
@@ -23,7 +23,5 @@ const Base = import.meta.env.BASE_URL;
         </div>
         <ModeToggle client:load />
         <Separator class="absolute bottom-0" />
-        <Separator class="absolute left-0 hidden 2xl:block" orientation="vertical" />
-        <Separator class="absolute right-0 hidden 2xl:block" orientation="vertical" />
     </div>
 </header>
