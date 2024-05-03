@@ -11,7 +11,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Label } from '@/components/ui/label'
 import { computed, ref, watch } from 'vue'
 import { Skeleton } from '@/components/ui/skeleton'
-import Button from './ui/button/Button.vue';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
   Tooltip,
@@ -23,6 +23,7 @@ import {
 import { useToast } from '@/components/ui/toast/use-toast'
 import { Toaster } from '@/components/ui/toast'
 
+import { SquareCheck } from 'lucide-vue-next';
 const { toast } = useToast()
 
 const props = defineProps<{
@@ -126,12 +127,25 @@ const formattedFileSize = computed(() => {
 
 });
 function copyText() {
-  const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
+  const copytxt = document.getElementById("copyText");
+  const checkbtn = document.getElementById("checkButton");
+  const copybtn = document.getElementById("copyButton");
+  const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show";
   navigator.clipboard.writeText(infoText);
   toast({
     description: 'Text copied to clipboard',
     duration: 1500,
   });
+  copytxt?.classList.add("hidden");
+  checkbtn?.classList.remove("hidden");
+  copybtn?.setAttribute("disabled", "disabled");
+
+setTimeout(() => {
+  copytxt?.classList.remove("hidden");
+  checkbtn?.classList.add("hidden");
+  copybtn?.removeAttribute("disabled");
+}, 1500)
+
 }
 
 </script>
@@ -273,10 +287,10 @@ function copyText() {
       </AlertDescription>
     </Alert>
     <Skeleton v-else class="h-24" />
-    <Button v-if="selectedDuration && selectedFps" @click="copyText" class="my-1" variant="secondary">Copy
-      text</Button>
+    <Button id="copyButton" v-if="selectedDuration && selectedFps" @click="copyText" class="my-1"
+      variant="secondary"><span id="copyText" class="block">Copy text</span>
+      <SquareCheck id="checkButton" stroke-width="1.5" class="hidden" />
+    </Button>
     <Skeleton v-else class="h-10 my-1" />
-
   </div>
-
 </template>
