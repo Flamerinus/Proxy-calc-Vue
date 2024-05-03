@@ -129,7 +129,7 @@ function copyText() {
   const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
   navigator.clipboard.writeText(infoText);
   toast({
-    description: 'Copied to clipboard',
+    description: 'Text copied to clipboard',
     duration: 1500,
   });
 }
