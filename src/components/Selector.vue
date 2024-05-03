@@ -125,12 +125,11 @@ const formattedFileSize = computed(() => {
   }
 
 });
-
-function copytext() {
+function copyText() {
   const infoText = document.getElementById("info")?.innerText || "Select all the options and info text will show"
   navigator.clipboard.writeText(infoText);
   toast({
-    description: 'Copied to clipboard.',
+    description: 'Copied to clipboard',
     duration: 1500,
   });
 }
@@ -274,7 +273,8 @@ function copytext() {
       </AlertDescription>
     </Alert>
     <Skeleton v-else class="h-24" />
-    <Button v-if="selectedDuration && selectedFps" @click="copytext" class="my-1" variant="secondary">Copy text</Button>
+    <Button v-if="selectedDuration && selectedFps" @click="copyText" class="my-1" variant="secondary">Copy
+      text</Button>
     <Skeleton v-else class="h-10 my-1" />
 
   </div>
