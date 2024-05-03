@@ -282,7 +282,7 @@ setTimeout(() => {
             item.resolution === selectedResolution)?.resvalue }} resolution, encoded with
           the {{ selectedCodec }} codec at {{ selectedFps }} FPS, will take up approximately {{ formattedFileSize }} of
           disk space, will have a bit rate of {{ bitRate }} MB/s, a color depth of {{ bitDepth }} bits and a {{ chroma
-          }} chroma subsampling. (proxycalc.atwebpages.com)
+          }} chroma subsampling. (flamerinus.github.io/Proxycalc)
         </span>
       </AlertDescription>
     </Alert>
