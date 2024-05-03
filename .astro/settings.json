@@ -1,5 +1,8 @@
 {
 	"devToolbar": {
-		"enabled": false
+		"enabled": true
+	},
+	"_variables": {
+		"lastUpdateCheck": 1714706333080
 	}
 }
