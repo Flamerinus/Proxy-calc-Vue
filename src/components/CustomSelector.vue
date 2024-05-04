@@ -25,6 +25,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input'
 
 import { SquareCheck } from 'lucide-vue-next';
+
+
+
 const { toast } = useToast()
 
 const durations: { [key: string]: number } = {
@@ -70,18 +73,25 @@ function copyText() {
 }
 
 function calculate() {
-    if (mega.value) {
-        realbr.value = parseFloat((bitRate.value / mega.value).toFixed(2));
+    if (bitRate.value <= 99999 && bitRate.value > 0 || bitRate.value == 0) {
 
-        if (selectedDuration) {
-            const selectedDurationValue = selectedDuration.value; // Access the value
-            fileSize.value = realbr.value * durations[selectedDurationValue]
+        if (mega.value) {
+            realbr.value = parseFloat((bitRate.value / mega.value).toFixed(2));
+
+            if (selectedDuration) {
+                const selectedDurationValue = selectedDuration.value; // Access the value
+                fileSize.value = realbr.value * durations[selectedDurationValue]
+            }
         }
-    }
-    if (mega.value == 1) {
-        unit.value = "MB"
-    } else {
-        unit.value = "Mb"
+        if (mega.value == 1) {
+            unit.value = "MB"
+        } else {
+            unit.value = "Mb"
+        }
+    } else if (bitRate.value > 99999) {
+        bitRate.value = 99999;
+    } else if (bitRate.value < 0) {
+        bitRate.value = 0;
     }
 }
 
@@ -106,9 +116,11 @@ watch([mega, bitRate, selectedDuration], calculate);
 
     <div class="mx-auto my-1">
         <Label for="bitrate">Bitrate</Label>
-        <Input placeholder="Please write your bitrate (1-1000000)" min="1" max="1000000" v-model="bitRate" />
+        <Input type="number" placeholder="Please write your bitrate (1-1000000)" min="1" max="99999"
+            v-model="bitRate" />
     </div>
     <div class="mx-auto my-1">
+        <Label for="unit">Unit</Label>
         <ToggleGroup type="single" class="flex justify-between" v-model="mega">
             <ToggleGroupItem value="1" aria-label="Megabytes/s" class="w-full text-lg">
                 Megabytes/s
@@ -139,7 +151,7 @@ watch([mega, bitRate, selectedDuration], calculate);
                 <TooltipTrigger class="flex flex-auto justify-center">
                     <Badge class="flex-1 justify-center" variant="secondary">File size: {{
                         formattedFileSize
-                        }}</Badge>
+                    }}</Badge>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>Size of the generated file on disk.</p>
