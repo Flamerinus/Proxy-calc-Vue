@@ -241,7 +241,7 @@ setTimeout(() => {
 
   <div class="mx-auto my-1">
     <Select name="time-selector" v-model="selectedDuration">
-      <Label for="duration">Duration {{ selectedDuration }}</Label>
+      <Label for="duration">Duration</Label>
       <SelectTrigger v-if="selectedFps">
         <SelectValue placeholder="Please select clip duration" />
       </SelectTrigger>
