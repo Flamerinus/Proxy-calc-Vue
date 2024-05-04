@@ -53,8 +53,19 @@ const Base = import.meta.env.BASE_URL;
 							</Button>
 						</a>
 					</div>
+					
 				))
 			}
+			<div class="w-full">
+				<a href={`${Base}/codeclist/custom`}>
+					<Button
+						variant="outline"
+						class="w-full flex-col items-center min-w-80 sm:min-w-0"
+					>
+						<span class="text-lg">Custom bitrate</span>
+					</Button>
+				</a>
+			</div>
 		</div>
 	</main>
 </Layout>
