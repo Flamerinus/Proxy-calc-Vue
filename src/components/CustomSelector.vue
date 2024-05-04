@@ -116,7 +116,7 @@ watch([mega, bitRate, selectedDuration], calculate);
 
     <div class="mx-auto my-1">
         <Label for="bitrate">Bitrate</Label>
-        <Input type="number" placeholder="Please write your bitrate (1-1000000)" min="1" max="99999"
+        <Input type="number" placeholder="Please write your bitrate (1-99999)" min="1" max="99999"
             v-model="bitRate" />
     </div>
     <div class="mx-auto my-1">
