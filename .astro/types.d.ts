@@ -136,13 +136,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"codecs": {
-"dnxhd.md": {
-	id: "dnxhd.md";
+"cineform.mdx": {
+	id: "cineform.mdx";
+  slug: "cineform";
+  body: string;
+  collection: "codecs";
+  data: InferEntrySchema<"codecs">
+} & { render(): Render[".mdx"] };
+"dnxhd.mdx": {
+	id: "dnxhd.mdx";
   slug: "dnxhd";
   body: string;
   collection: "codecs";
   data: InferEntrySchema<"codecs">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "dnxhr.mdx": {
 	id: "dnxhr.mdx";
   slug: "dnxhr";
