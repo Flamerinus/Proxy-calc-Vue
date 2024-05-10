@@ -77,7 +77,7 @@ function calculate() {
       realbr.value = parseFloat((bitRate.value / mega.value).toFixed(2));
 
       if (selectedDuration) {
-        const selectedDurationValue = selectedDuration.value; // Access the value
+        const selectedDurationValue = selectedDuration.value;
         fileSize.value = realbr.value * durations[selectedDurationValue];
       }
     }
