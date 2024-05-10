@@ -40,7 +40,7 @@ const props = defineProps<{
     It displays one image for darkmode and hides it for light mode, displaying the other.
  -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-4">
-        <Card v-for="card in Cards" class="flex flex-col flex-grow">
+        <Card v-for="card in Cards" class="flex flex-col flex-grow bg-secondary hover:bg-secondary/90">
             <a :href="card.url" target="_blank" rel="noopener noreferrer" class="flex flex-col h-full">
                 <CardHeader class="p-2">
                     <CardTitle>{{ card.title }}</CardTitle>
