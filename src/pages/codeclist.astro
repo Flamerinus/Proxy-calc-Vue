@@ -46,10 +46,12 @@ const Base = import.meta.env.BASE_URL;
 					<div class="w-full">
 						<a href={`${Base}/codeclist/${codec.slug}`}>
 							<Button
-								variant="outline"
-								class="w-full flex-col items-center min-w-80 sm:min-w-0"
+								variant="secondary"
+								class="w-full flex-col items-center min-w-80 sm:min-w-0 h-full"
 							>
-								<span class="text-lg">{codec.data.title}</span>
+								<img src={`${Base}/${codec.slug}logo.svg`} alt={`${codec.data.title} logo`} class="h-10 mb-2" />	
+
+								<img src={`${Base}/${codec.slug}.svg`} alt={`${codec.data.title} logo`} class="h-6" />	
 							</Button>
 						</a>
 					</div>
@@ -59,10 +61,10 @@ const Base = import.meta.env.BASE_URL;
 			<div class="w-full">
 				<a href={`${Base}/codeclist/custom`}>
 					<Button
-						variant="outline"
-						class="w-full flex-col items-center min-w-80 sm:min-w-0"
+						variant="secondary"
+						class="w-full flex-col items-center min-w-80 sm:min-w-0 h-24"
 					>
-						<span class="text-lg">Custom bitrate</span>
+						<span class="text-3xl font-bold text-muted-foreground">Custom bitrate</span>
 					</Button>
 				</a>
 			</div>
