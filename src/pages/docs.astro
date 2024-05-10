@@ -46,10 +46,10 @@ const Base = import.meta.env.BASE_URL;
 					<div class="w-full">
 						<a href={`${Base}/docs/${doc.slug}`}>
 							<Button
-								variant="outline"
-								class="w-full flex-col items-center min-w-80 sm:min-w-0"
+								variant="secondary"
+								class="w-full flex-col items-center min-w-80 sm:min-w-0 sm:h-16"
 							>
-								<span class="text-lg">{doc.data.title}</span>
+								<span class="text-lg text-muted-foreground sm:text-xl">{doc.data.title}</span>
 							</Button>
 						</a>
 					</div>
