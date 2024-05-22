@@ -2,125 +2,120 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Home, ArrowDown, Import } from "lucide-vue-next";
+import { Home, ArrowDown, ExternalLink } from "lucide-vue-next";
 import { Image } from "astro:assets";
 import Populator from "@/components/Populator.vue";
 import myFace from "../images/faceavatarv2.png";
 const Base = import.meta.env.BASE_URL;
 
 const Cardlist = [
-	{
-		title: "Astro",
-		description: "The web framework for content-driven websites.",
-		imgdark: "astro-logo-light.svg",
-		imglight: "astro-logo-dark.svg",
-		url: "https://astro.build/",
-	},
-	{
-		title: "Vue.js",
-		description: "The Progressive JavaScript Framework.",
-		imgdark: "vue-logo.svg",
-		imglight: "vue-logo.svg",
-		url: "https://vuejs.org/",
-	},
-	{
-		title: "Shadcn-vue",
-		description:
-			"Re-usable components built with Radix Vue, and Tailwind CSS.",
-		imgdark: "shadcn-vue-logo-black.svg",
-		imglight: "shadcn-vue-logo-black.svg",
-		url: "https://shadcn-vue.com/",
-	},
-	{
-		title: "Tailwindcss",
-		description:
-			"Rapidly build modern websites without ever leaving your HTML.",
-		imgdark: "tailwindcss-logo.svg",
-		imglight: "tailwindcss-logo.svg",
-		url: "https://tailwindcss.com/",
-	},
-	{
-		title: "Lucide",
-		description: "Beautiful & consistent icons Made by the community.",
-		imgdark: "lucide-logo-dark.svg",
-		imglight: "lucide-logo-light.svg",
-		url: "https://lucide.dev/",
-	},
+  {
+    title: "Astro",
+    description: "The web framework for content-driven websites.",
+    imgdark: "astro-logo-light.svg",
+    imglight: "astro-logo-dark.svg",
+    url: "https://astro.build/",
+  },
+  {
+    title: "Vue.js",
+    description: "The Progressive JavaScript Framework.",
+    imgdark: "vue-logo.svg",
+    imglight: "vue-logo.svg",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "Shadcn-vue",
+    description: "Re-usable components built with Radix Vue, and Tailwind CSS.",
+    imgdark: "shadcn-vue-logo-black.svg",
+    imglight: "shadcn-vue-logo-black.svg",
+    url: "https://shadcn-vue.com/",
+  },
+  {
+    title: "Tailwindcss",
+    description:
+      "Rapidly build modern websites without ever leaving your HTML.",
+    imgdark: "tailwindcss-logo.svg",
+    imglight: "tailwindcss-logo.svg",
+    url: "https://tailwindcss.com/",
+  },
+  {
+    title: "Lucide",
+    description: "Beautiful & consistent icons Made by the community.",
+    imgdark: "lucide-logo-dark.svg",
+    imglight: "lucide-logo-light.svg",
+    url: "https://lucide.dev/",
+  },
 ];
 ---
 
 <Layout title={"Proxy Calc > About"}>
-	<main>
-		<div class="inline-flex items-center">
-			<Breadcrumb>
-				<BreadcrumbList>
-					<BreadcrumbItem>
-						<BreadcrumbLink>
-							<a href=`${Base}/`>
-								<Home size={20} stroke-width={1.5} />
-							</a>
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbPage>About</BreadcrumbPage>
-					</BreadcrumbItem>
-				</BreadcrumbList>
-			</Breadcrumb>
-		</div>
-		<div class="flex justify-center">
-			<div class="max-w-96 sm:max-w-full">
-				<Card class="my-4 mx-auto max-w-96 bg-secondary hover:bg-secondary/90">
-					<a
-						href="https://github.com/Flamerinus"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="flex flex-col h-full"
-					>
-						<CardHeader
-							class="flex flex-row items-center justify-between p-1"
-						>
-							<div
-								class="flex items-center flex-grow justify-between"
-							>
-								<Image
-									src={myFace}
-									alt={"Flamerinus face"}
-									class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
-								/>
-								<CardDescription
-									>Code by <span class="text-foreground"
-										>Alex J.</span
-									></CardDescription
-								>
-							</div>
-							<div
-								class="flex items-center flex-grow justify-center"
-							>
-								<CardDescription>Tools used:</CardDescription>
-								<ArrowDown size={16} stroke-width={2} />
-							</div>
-						</CardHeader>
-					</a>
-				</Card>
-				<Populator Cards={Cardlist} client:load />
-			</div>
-		</div>
-	</main>
+  <main>
+    <div class="inline-flex items-center">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <a href=`${Base}/`>
+                <Home size={20} stroke-width={1.5} />
+              </a>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>About</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+    <div class="flex justify-center">
+      <div class="max-w-96 sm:max-w-full">
+        <Card class="my-4 mx-auto max-w-96 bg-secondary hover:bg-secondary/90">
+          <a
+            href="https://github.com/Flamerinus"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col h-full"
+          >
+            <CardHeader class="flex flex-row items-center justify-between p-1">
+              <div class="flex items-center flex-grow justify-between">
+                <Image
+                  src={myFace}
+                  alt={"Flamerinus face"}
+                  class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
+                />
+                <div class="flex items-center flex-grow justify-center">
+                  <ExternalLink size={16} class="mr-1"/>
+                  <CardDescription>
+                    Code by <span class="text-foreground">Alex J.</span
+                    ></CardDescription
+                  >
+                </div>
+              </div>
+              <div class="flex items-center flex-grow justify-center">
+                <CardDescription>Tools used:</CardDescription>
+                <ArrowDown size={16} stroke-width={2} />
+              </div>
+            </CardHeader>
+          </a>
+        </Card>
+        <Populator Cards={Cardlist} client:load />
+      </div>
+    </div>
+  </main>
 </Layout>
