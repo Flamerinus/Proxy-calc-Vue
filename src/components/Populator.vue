@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 const Base = import.meta.env.BASE_URL;
-import { ExternalLink } from 'lucide-vue-next';
+import { SquareArrowOutUpRight } from 'lucide-vue-next';
 
 /*This is how the component is expecting you to define the cards.
 If you have the same image for light and dark mode, use the same url for both.
@@ -53,7 +53,7 @@ const props = defineProps<{
                     <img :src="`${Base}/${card.imglight}`" :alt="`${card.title}` + ` logo`"
                         class="max-h-16 flex dark:hidden" />
                 </CardContent>
-                <CardFooter class="p-2"><ExternalLink :size=20 class="mr-1"/> {{ card.url }} </CardFooter>
+                <CardFooter class="p-2"> {{ card.url }} <SquareArrowOutUpRight :size=20 :stroke-width="2" class="ml-1"/></CardFooter>
             </a>
         </Card>
     </div>
