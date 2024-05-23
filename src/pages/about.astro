@@ -18,7 +18,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Home, ArrowDown, ExternalLink } from "lucide-vue-next";
+import { Home, ArrowDown, ExternalLink, SquareArrowOutUpRight } from "lucide-vue-next";
 import { Image } from "astro:assets";
 import Populator from "@/components/Populator.vue";
 import myFace from "../images/faceavatarv2.png";
@@ -30,21 +30,21 @@ const Cardlist = [
     description: "The web framework for content-driven websites.",
     imgdark: "astro-logo-light.svg",
     imglight: "astro-logo-dark.svg",
-    url: "https://astro.build/",
+    url: "https://astro.build",
   },
   {
     title: "Vue.js",
     description: "The Progressive JavaScript Framework.",
     imgdark: "vue-logo.svg",
     imglight: "vue-logo.svg",
-    url: "https://vuejs.org/",
+    url: "https://vuejs.org",
   },
   {
     title: "Shadcn-vue",
     description: "Re-usable components built with Radix Vue, and Tailwind CSS.",
     imgdark: "shadcn-vue-logo-black.svg",
     imglight: "shadcn-vue-logo-black.svg",
-    url: "https://shadcn-vue.com/",
+    url: "https://shadcn-vue.com",
   },
   {
     title: "Tailwindcss",
@@ -52,14 +52,14 @@ const Cardlist = [
       "Rapidly build modern websites without ever leaving your HTML.",
     imgdark: "tailwindcss-logo.svg",
     imglight: "tailwindcss-logo.svg",
-    url: "https://tailwindcss.com/",
+    url: "https://tailwindcss.com",
   },
   {
     title: "Lucide",
     description: "Beautiful & consistent icons Made by the community.",
     imgdark: "lucide-logo-dark.svg",
     imglight: "lucide-logo-light.svg",
-    url: "https://lucide.dev/",
+    url: "https://lucide.dev",
   },
 ];
 ---
@@ -71,7 +71,7 @@ const Cardlist = [
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <a href=`${Base}/`>
+              <a href=`${Base}/` aria-label="Home">
                 <Home size={20} stroke-width={1.5} />
               </a>
             </BreadcrumbLink>
@@ -98,18 +98,19 @@ const Cardlist = [
                   src={myFace}
                   alt={"Flamerinus face"}
                   class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
+                  loading={"eager"}
                 />
                 <div class="flex items-center flex-grow justify-center">
-                  <ExternalLink size={16} class="mr-1"/>
                   <CardDescription>
                     Code by <span class="text-foreground">Alex J.</span
                     ></CardDescription
-                  >
+                  >                  <SquareArrowOutUpRight size={20} class="ml-1"/>
+
                 </div>
               </div>
               <div class="flex items-center flex-grow justify-center">
                 <CardDescription>Tools used:</CardDescription>
-                <ArrowDown size={16} stroke-width={2} />
+                <ArrowDown size={20} stroke-width={2} />
               </div>
             </CardHeader>
           </a>
