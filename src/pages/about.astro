@@ -84,7 +84,7 @@ const Cardlist = [
       </Breadcrumb>
     </div>
     <div class="flex justify-center">
-      <div class="max-w-96 sm:max-w-full">
+      <div class="w-full max-w-96 sm:max-w-full">
         <Card class="my-4 mx-auto max-w-96 bg-secondary hover:bg-secondary/90">
           <a
             href="https://github.com/Flamerinus"
@@ -97,14 +97,14 @@ const Cardlist = [
                 <Image
                   src={myFace}
                   alt={"Flamerinus face"}
-                  class="rounded-md w-10 h-10 xl:w-12 xl:h-12"
+                  class="rounded-md size-12 xl:size-16"
                   loading={"eager"}
                 />
                 <div class="flex items-center flex-grow justify-center">
                   <CardDescription>
                     Code by <span class="text-foreground">Alex J.</span
                     ></CardDescription
-                  >                  <SquareArrowOutUpRight size={20} strokeWidth={1.5} class="ml-1"/>
+                  >                  
 
                 </div>
               </div>
@@ -112,6 +112,7 @@ const Cardlist = [
                 <CardDescription>Tools used:</CardDescription>
                 <ArrowDown size={20} stroke-width={1.5} />
               </div>
+              <SquareArrowOutUpRight size={20} strokeWidth={1.5} class="ml-1"/>
             </CardHeader>
           </a>
         </Card>
