@@ -18,7 +18,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Home, ArrowDown, ExternalLink, SquareArrowOutUpRight } from "lucide-vue-next";
+import {
+  Home,
+  ArrowDown,
+  ExternalLink,
+  SquareArrowOutUpRight,
+} from "lucide-vue-next";
 import { Image } from "astro:assets";
 import Populator from "@/components/Populator.vue";
 import myFace from "../images/faceavatarv2.png";
@@ -90,8 +95,7 @@ const Cardlist = [
             href="https://github.com/Flamerinus"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex flex-col h-full"
-          >
+            class="flex flex-col h-full">
             <CardHeader class="flex flex-row items-center justify-between p-1">
               <div class="flex items-center flex-grow justify-between">
                 <Image
@@ -104,15 +108,14 @@ const Cardlist = [
                   <CardDescription>
                     Code by <span class="text-foreground">Alex J.</span
                     ></CardDescription
-                  >                  
-
+                  >
                 </div>
               </div>
               <div class="flex items-center flex-grow justify-center">
                 <CardDescription>Tools used:</CardDescription>
                 <ArrowDown size={20} stroke-width={1.5} />
               </div>
-              <SquareArrowOutUpRight size={20} strokeWidth={1.5} class="ml-1"/>
+              <SquareArrowOutUpRight size={20} strokeWidth={1.5} class="ml-1" />
             </CardHeader>
           </a>
         </Card>
