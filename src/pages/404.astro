@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import { TriangleAlert } from "lucide-vue-next";
+import { Home } from "lucide-vue-next";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+const Base = import.meta.env.BASE_URL;
+---
+
+<Layout title={"Proxy Calc > 404 Not Found"}>
+  <main class="flex flex-col flex-grow">
+    <div class="inline-flex items-center my-[9px]">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <a href=`${Base}/`>
+                <Home size={20} stroke-width={1.5} />
+              </a>
+            </BreadcrumbLink>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>404 Not Found</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+    <div class="text-3xl text-center">Looking for something?</div>
+    <div class="text-3xl text-center">It's not here, try again.</div>
+
+    <div class="flex-grow flex justify-center items-center">
+      <div
+        class="max-w-xl w-full flex flex-col items-center rounded-md text-center bg-red-950 text-5xl font-semibold text-red-600 h-fit pb-4">
+        404
+        <TriangleAlert size={200} stroke-width={1.5} />
+        Media Offline
+      </div>
+    </div>
+  </main>
+</Layout>

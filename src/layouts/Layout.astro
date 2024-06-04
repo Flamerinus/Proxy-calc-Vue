@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -14,54 +14,52 @@ export const Base = import.meta.env.BASE_URL;
 
 <!doctype html>
 <html class="dark" lang="en">
-	<head>
-		<ViewTransitions />
-		<script is:inline>
-			const getThemePreference = () => {
-				if (
-					typeof localStorage !== "undefined" &&
-					localStorage.getItem("theme")
-				) {
-					return localStorage.getItem("theme");
-				}
-				return window.matchMedia("(prefers-color-scheme: dark)").matches
-					? "dark"
-					: "light";
-			};
-			const isDark = getThemePreference() === "dark";
-			document.documentElement.classList[isDark ? "add" : "remove"](
-				"dark",
-			);
+  <head>
+    <ViewTransitions />
+    <script is:inline>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+      const isDark = getThemePreference() === "dark";
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-			if (typeof localStorage !== "undefined") {
-				const observer = new MutationObserver(() => {
-					const isDark =
-						document.documentElement.classList.contains("dark");
-					localStorage.setItem("theme", isDark ? "dark" : "light");
-				});
-				observer.observe(document.documentElement, {
-					attributes: true,
-					attributeFilter: ["class"],
-				});
-			}
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Proxy file size calculator" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href=`${Base}/favicon.svg`/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="flex flex-col h-dvh font-sans">
-		<Header />
-		<div
-		class="container max-w-screen-xl flex-grow relative inset-x-0" style="padding-top: calc(var(--header-height)); z-0"		>
-			<div class="flex-grow pb-10">
-				<slot />
-			</div>
-			<div class="absolute bottom-0 inset-x-0 w-full">
-				<Footer />
-			</div>
-		</div>
-	</body>
+      if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+          const isDark = document.documentElement.classList.contains("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Proxy file size calculator" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href=`${Base}/favicon.svg` />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col h-dvh font-sans">
+    <Header />
+    <div
+      class="container max-w-screen-xl flex flex-grow relative inset-x-0"
+      style="padding-top: calc(var(--header-height)); z-0">
+      <div class="flex flex-col flex-grow pb-10">
+        <slot />
+      </div>
+      <div class="absolute bottom-0 inset-x-0 w-full">
+        <Footer />
+      </div>
+    </div>
+  </body>
 </html>
