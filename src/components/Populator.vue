@@ -79,9 +79,9 @@ const props = defineProps<{
                     <img :src="`${Base}/${card.imglight}`" :alt="`${card.title}` + ` logo`"
                         class="max-h-16 flex dark:hidden" />
                 </CardContent>
-                <CardFooter class="p-2">
+                <CardFooter class="relative p-2">
                     {{ card.url }}
-                    <SquareArrowOutUpRight :size="20" :stroke-width="1.5" class="ml-1" />
+                    <SquareArrowOutUpRight :size="20" :stroke-width="1.5" class="absolute right-1" />
                 </CardFooter>
             </a>
         </Card>
