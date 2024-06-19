@@ -166,13 +166,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "docs": {
-"all-intra.md": {
-	id: "all-intra.md";
+"all-intra.mdx": {
+	id: "all-intra.mdx";
   slug: "all-intra";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "alpha.md": {
 	id: "alpha.md";
   slug: "alpha";
